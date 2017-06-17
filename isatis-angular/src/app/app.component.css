@@ -2,18 +2,6 @@ isatis-root {
     padding-top: 50px;
 }
 
-.site-bg {
-    width: 960px;
-    margin: auto;
-    padding: 20px;
-    background: #ffffff;
-    text-align: center;
-}
-
-.containor {
-    background: #99ffcc;
-}
-
 .title {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -26,5 +14,3 @@ isatis-root {
     font-size: 20px;
     color: #ff0000;
 }
-
-.welcome {}
