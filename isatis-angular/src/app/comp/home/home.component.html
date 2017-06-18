@@ -5,6 +5,15 @@
                 Home Page
             </h1>
             <p class="welcome">Hello <span class="name">Water What</span> ~ Here is my new site.</p>
+
+            <div>
+                <label>title: </label>
+                <input #title (keydown)="update_title_on_key($event, title.value)" />
+                <button (click)="goBack(title.value)">Test</button>
+            </div>
+            <div *ngIf="selectTitle">
+                <h2>My Input is <span class="name">{{ selectTitle }}</span>.</h2>
+            </div>
         </div>
     </div>
 </div>
