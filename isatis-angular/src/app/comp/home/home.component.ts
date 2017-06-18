@@ -15,13 +15,11 @@ export class HomeComponent {
 
     update_title_on_key(event: any, title: String) {
         if (event.key == "Enter") {
-            console.log(event);
             this.selectTitle = title;
         }
     }
 
     goBack(title: String): void {
         this.selectTitle = title;
-        console.log(title);
     }
 }
