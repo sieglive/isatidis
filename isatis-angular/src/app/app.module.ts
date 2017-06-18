@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './comp/home/home.component'
 import { ArticleComponent } from './comp/article/article.component';
 import { ProfileComponent } from './comp/profile/profile.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Routes = [
-    { path: '', redirectTo: 'article', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
     { path: 'article', component: ArticleComponent },
     { path: 'profile', component: ProfileComponent },
 ];
@@ -17,6 +19,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
+        HomeComponent,
         ArticleComponent,
         ProfileComponent
     ],
