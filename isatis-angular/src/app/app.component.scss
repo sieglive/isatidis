@@ -2,6 +2,14 @@ body {
     background-color: #aaaaaa;
 }
 
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
 .title {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -13,4 +21,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: #ff0000;
+}
+
+a {
+    color: white;
+}
+
+content {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
 }
