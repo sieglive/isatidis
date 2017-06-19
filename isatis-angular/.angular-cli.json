@@ -19,7 +19,7 @@
         "prefix": "isatis",
         "styles": [
             "styles.scss",
-            "md.css"
+            "md.scss"
         ],
         "scripts": [],
         "environmentSource": "environments/environment.ts",

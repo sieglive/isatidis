@@ -27,8 +27,16 @@ a {
     color: white;
 }
 
-content {
+content.isatis-nav {
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+content.isatis-article {
     display: block;
     width: 960px;
     margin: 0 auto;
+    padding: 20px;
 }
