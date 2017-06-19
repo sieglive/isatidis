@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './comp/home/home.component'
 import { ArticleComponent } from './comp/article/article.component';
 import { ProfileComponent } from './comp/profile/profile.component';
-import { MdButtonModule, MdInputModule, MdToolbarModule } from '@angular/material';
+import { MdButtonModule, MdInputModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
+
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
@@ -24,13 +25,14 @@ const appRoutes: Routes = [
         ProfileComponent
     ],
     imports: [
-
         BrowserModule,
         BrowserAnimationsModule,
         MdButtonModule,
         // MdCheckboxModule,
         MdToolbarModule,
         MdInputModule,
+        MdIconModule,
+        MdCardModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [],
