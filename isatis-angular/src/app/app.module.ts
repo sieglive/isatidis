@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './comp/home/home.component'
@@ -25,6 +25,7 @@ const appRoutes: Routes = [
         ProfileComponent
     ],
     imports: [
+        FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
         MdButtonModule,

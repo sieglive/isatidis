@@ -1,12 +1,22 @@
 <md-toolbar color="primary">
     <content class="isatis-nav">
 
-        <span><a routerLink="home"><button md-button><md-icon>do_not_disturb</md-icon> Star-T</button></a></span>
-        <span><a routerLink="article"><button md-button><md-icon>fingerprint</md-icon> HOME</button></a></span>
-        <span><a routerLink="profile"><button md-button><md-icon>account_balance</md-icon> PROFILE</button></a></span>
+        <span><a routerLink="home"><button md-button><span class="brand-nav">S<i>tar</i>-T</span></button>
+        </a>
+        </span>
+        <span><a routerLink="article"><button md-button><md-icon>fingerprint</md-icon><span class="normal-nav"> HOME</span></button>
+        </a>
+        </span>
+        <span><a routerLink="profile"><button md-button><md-icon>account_balance</md-icon><span class="normal-nav"> PROFILE</span></button>
+        </a>
+        </span>
         <span class="example-spacer"></span>
-        <span><a routerLink="article"><button md-button><md-icon>flight_takeoff</md-icon> LOG IN</button></a></span>
-        <span><a routerLink="profile"><button md-button><md-icon>flight_land</md-icon> LOG OUT</button></a></span>
+        <span><a routerLink="article"><button md-button><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button>
+        </a>
+        </span>
+        <span><a routerLink="profile"><button md-button><md-icon>flight_takeoff</md-icon><span class="normal-nav"> LOG OUT</span></button>
+        </a>
+        </span>
     </content>
 </md-toolbar>
 <content class="isatis-article">

@@ -1,15 +1,18 @@
 <md-card>
-    <h1 class="title">
+    <div class="title">
         Home Page
-    </h1>
-    <p class="welcome">Hello <span class="name">Water What</span> ~ Here is my new site.</p>
+    </div>
+    <p class="welcome">Hello there~, write something here, see what happen~</p>
 
     <div>
-        <label>title: </label>
+        <label>Here: </label>
         <md-input-container>
-            <input mdInput #title (keydown)="update_title_on_key($event, title.value)" placeholder="title" />
+            <md-placeholder>
+                Whatever you like
+                <md-icon>mode_edit</md-icon>
+            </md-placeholder>
+            <input mdInput #title [(ngModel)]="selectTitle" />
         </md-input-container>
-        <button (click)="goBack(title.value)">Test</button>
     </div>
     <div *ngIf="selectTitle">
         <h2>My Input is <span class="name">{{ selectTitle }}</span>.</h2>
