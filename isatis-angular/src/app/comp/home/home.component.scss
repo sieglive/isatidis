@@ -1,11 +1,21 @@
 .name {
-    font-family: Lato, Arial, Helvetica, sans-serif;
     color: #ff0000;
 }
 
 .title {
     font-family: Raleway, Arial, Helvetica, sans-serif;
     font-size: 3em;
+}
+
+.myinput {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    word-break: break-all;
+    font-size: 1.5em;
+}
+
+.mat-input-container {
+    width: 100%;
 }
 
 .mat-input-container .mat-datepicker-toggle,

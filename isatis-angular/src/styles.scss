@@ -2,6 +2,7 @@
 
 body {
     margin: 0px;
+    min-width: 640px;
 }
 
 md-card.mat-card {
@@ -18,4 +19,34 @@ md-card.mat-card {
     z-index: -1;
     width: 100%;
     height: 100%
+}
+
+@media screen and (min-width: 1280px) {
+    content.isatis-nav {
+        display: flex;
+        width: 1280px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    content.isatis-article {
+        display: block;
+        width: 1280px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    content.isatis-nav {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    content.isatis-article {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 20px;
+    }
 }

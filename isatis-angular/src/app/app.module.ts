@@ -10,6 +10,8 @@ import { ArticleComponent } from './comp/article/article.component';
 import { ProfileComponent } from './comp/profile/profile.component';
 import { MdButtonModule, MdInputModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
 
+import { ConvertFormat } from './app.pipe';
+
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
         AppComponent,
         HomeComponent,
         ArticleComponent,
-        ProfileComponent
+        ProfileComponent,
+        ConvertFormat
     ],
     imports: [
         FormsModule,

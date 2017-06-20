@@ -1,20 +1,22 @@
-<md-card>
-    <div class="title">
-        Home Page
-    </div>
-    <p class="welcome">Hello there~, write something here, see what happen~</p>
+<content class="isatis-articles">
+    <md-card>
+        <div class="title">
+            Home Page
+        </div>
+        <p class="welcome">Hello there~, write something here, see what happen~</p>
 
-    <div>
-        <label>Here: </label>
-        <md-input-container>
-            <md-placeholder>
-                Whatever you like
-                <md-icon>mode_edit</md-icon>
-            </md-placeholder>
-            <input mdInput #title [(ngModel)]="selectTitle" />
-        </md-input-container>
-    </div>
-    <div *ngIf="selectTitle">
-        <h2>My Input is <span class="name">{{ selectTitle }}</span>.</h2>
-    </div>
-</md-card>
+        <div class="input-test">
+            <md-input-container>
+                <md-placeholder>
+                    Whatever you like
+                    <md-icon>mode_edit</md-icon>
+                </md-placeholder>
+                <textarea mdInput #title [(ngModel)]="selectTitle"></textarea>
+            </md-input-container>
+        </div>
+        <div *ngIf="selectTitle">
+            <p class="myinput">My Input is:</p>
+            <span *ngFor="let thistitle of selectTitle.split('\n')" class="name">{{ thistitle }}<br/></span>
+        </div>
+    </md-card>
+</content>
