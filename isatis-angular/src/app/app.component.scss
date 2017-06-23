@@ -6,10 +6,13 @@ $mycolor: map-get($mat-teal, 100);
     width: 30px;
     height: 30px;
     stroke-width: "0";
-    circle {
-        fill: map-get($mat-teal, 50);
-        stroke: map-get($mat-teal, 900);
-        stroke-width: 1px;
+    .inner-circle {
+        fill: map-get($mat-teal, 100);
+    }
+    .outer-circle {
+        fill: none;
+        stroke: map-get($mat-teal, 500);
+        stroke-width: 3px;
     }
     .path-1 {
         fill: map-get($mat-teal, 200);
