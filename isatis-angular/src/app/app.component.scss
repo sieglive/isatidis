@@ -1,3 +1,31 @@
+@import '~@angular/material/theming';
+$config: mat-typography-config();
+@include mat-core();
+$mycolor: map-get($mat-teal, 100);
+.site-logo {
+    width: 30px;
+    height: 30px;
+    stroke-width: "0";
+    circle {
+        fill: map-get($mat-teal, 50);
+        stroke: map-get($mat-teal, 900);
+        stroke-width: 1px;
+    }
+    .path-1 {
+        fill: map-get($mat-teal, 200);
+    }
+    .path-2 {
+        fill: map-get($mat-teal, 500);
+    }
+    .path-3 {
+        fill: map-get($mat-teal, 600);
+    }
+}
+
+// .logo-button {
+//     // border-radius: 2px;
+//     // box-shadow: inset 0 0 2px 2px #ccc;
+// }
 body {
     background-color: #aaaaaa;
 }

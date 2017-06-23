@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'profile',
+  selector: 'isatis-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })

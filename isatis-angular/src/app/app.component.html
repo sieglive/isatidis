@@ -1,13 +1,32 @@
 <md-toolbar color="primary">
     <content class="isatis-nav">
 
-        <span><a routerLink="home"><button md-button><span class="brand-nav">S<i>tar</i>-T</span></button>
+        <span>
+            <a routerLink="article">
+                <button md-button>
+    <svg class="site-logo" style="width:30px;height:30px;">
+        <defs>
+            <filter id="Gaussian_Blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+            </filter>
+        </defs>
+        <circle cx="15.0" cy="15.0" r="13.0" filter="url(#Gaussian_Blur)"/>
+        <path class="path-1" d="M12.5 16.443375672974064 L11.345299461620748 18.443375672974064 L23.273502691896258 18.443375672974064 L16.154700538379252 6.113248654051871 L13.845299461620748 6.113248654051871 L19.809401076758505 16.443375672974064 L12.5 16.443375672974064" />
+        <path class="path-2" d="M11.345299461620748 18.443375672974064 L23.273502691896258 18.443375672974064 L22.118802153517006 20.443375672974064 L7.881197846482993 20.443375672974064 L13.845299461620748 10.113248654051871 L15.0 12.113248654051871 L11.345299461620748 18.443375672974064" />
+        <path class="path-3" d="M7.881197846482993 20.443375672974064 L6.726497308103742 18.443375672974064 L13.845299461620748 6.113248654051871 L19.809401076758505 16.443375672974064 L17.5 16.443375672974064 L13.845299461620748 10.113248654051871 L7.881197846482993 20.443375672974064" />
+        <animateTransform attributeName="transform" begin="0s" dur="2s" type="rotate" from="0 0 0" to="360 0 0" repeatCount="indefinite"/>
+    </svg>
+        <span class="brand-nav">S<i>tar</i>-T</span>
+        </button>
         </a>
         </span>
-        <span><a routerLink="article"><button md-button><md-icon>fingerprint</md-icon><span class="normal-nav"> HOME</span></button>
+        <span><a routerLink="home"><button md-button><md-icon>fingerprint</md-icon><span class="normal-nav"> HOME</span></button>
         </a>
         </span>
         <span><a routerLink="profile"><button md-button><md-icon>account_balance</md-icon><span class="normal-nav"> PROFILE</span></button>
+        </a>
+        </span>
+        <span><a routerLink="about"><button md-button><md-icon>info</md-icon><span class="normal-nav"> ABOUT</span></button>
         </a>
         </span>
         <span class="example-spacer"></span>

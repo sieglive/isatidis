@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
-    selector: 'home',
+    selector: 'isatis-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
