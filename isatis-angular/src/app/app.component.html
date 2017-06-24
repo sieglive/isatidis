@@ -2,7 +2,7 @@
     <content class="isatis-nav">
 
         <span>
-            <a routerLink="article">
+            <a routerLink="/">
                 <button md-button>
     <svg class="site-logo" style="width:30px;height:30px;">
         <defs>
@@ -10,6 +10,8 @@
                 <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
             </filter>
         </defs>
+
+        
         <circle class="inner-circle" cx="15.0" cy="15.0" r="12.0" filter="url(#Gaussian_Blur)"/>
         <circle class="outer-circle" cx="15.0" cy="15.0" r="14.0"/>
         <path class="path-1" d="M12.5 16.443375672974064 L11.345299461620748 18.443375672974064 L23.273502691896258 18.443375672974064 L16.154700538379252 6.113248654051871 L13.845299461620748 6.113248654051871 L19.809401076758505 16.443375672974064 L12.5 16.443375672974064" />
@@ -31,12 +33,19 @@
         </a>
         </span>
         <span class="example-spacer"></span>
-        <span><a routerLink="article"><button md-button><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button>
+        <span>
+            <button md-button [mdMenuTriggerFor]="menu"><md-icon>dehaze</md-icon><span class="normal-nav"> MENU</span></button>
+        <md-menu #menu="mdMenu">
+            <a routerLink="article"><button md-menu-item><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button></a>
+            <a routerLink="profile"><button md-menu-item><md-icon>flight_takeoff</md-icon><span class="normal-nav"> LOG OUT</span></button></a>
+        </md-menu>
+        </span>
+        <!--<span><a routerLink="article"><button md-button><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button>
         </a>
         </span>
         <span><a routerLink="profile"><button md-button><md-icon>flight_takeoff</md-icon><span class="normal-nav"> LOG OUT</span></button>
         </a>
-        </span>
+        </span>-->
     </content>
 </md-toolbar>
 <content class="isatis-article">

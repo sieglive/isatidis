@@ -1,0 +1,12 @@
+.bulletin-container {
+    display: flex;
+    min-width: 640px;
+    .bulletin-column {
+        width: 33.33%;
+        min-width: 320px;
+        .bulletin-unit {
+            margin: 5px;
+            padding: 5px;
+        }
+    }
+}

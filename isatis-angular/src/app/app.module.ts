@@ -9,12 +9,14 @@ import { HomeComponent } from './comp/home/home.component'
 import { ArticleComponent } from './comp/article/article.component';
 import { ProfileComponent } from './comp/profile/profile.component';
 import { AboutComponent } from './comp/about/about.component';
-import { MdButtonModule, MdInputModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
+import { BulletinComponent } from './comp/bulletin/bulletin.component';
+import { MaterialModule } from '@angular/material';
 
 import { ConvertFormat } from './app.pipe';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'bulletin', pathMatch: 'full' },
+    { path: 'bulletin', component: BulletinComponent },
     { path: 'home', component: HomeComponent },
     { path: 'article', component: ArticleComponent },
     { path: 'profile', component: ProfileComponent },
@@ -28,18 +30,14 @@ const appRoutes: Routes = [
         ArticleComponent,
         ProfileComponent,
         AboutComponent,
+        BulletinComponent,
         ConvertFormat
     ],
     imports: [
         FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
-        MdButtonModule,
-        // MdCheckboxModule,
-        MdToolbarModule,
-        MdInputModule,
-        MdIconModule,
-        MdCardModule,
+        MaterialModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [],
