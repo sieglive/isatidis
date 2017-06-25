@@ -33,10 +33,12 @@
         </a>
         </span>
         <span class="example-spacer"></span>
+        <span><button md-button (click)="clean_bg()"><md-icon>info</md-icon><span class="normal-nav"> CLEAN</span></button>
+        </span>
         <span>
             <button md-button [mdMenuTriggerFor]="menu"><md-icon>dehaze</md-icon><span class="normal-nav"> MENU</span></button>
         <md-menu #menu="mdMenu">
-            <a routerLink="article"><button md-menu-item><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button></a>
+            <a routerLink="auth"><button md-menu-item><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button></a>
             <a routerLink="profile"><button md-menu-item><md-icon>flight_takeoff</md-icon><span class="normal-nav"> LOG OUT</span></button></a>
         </md-menu>
         </span>

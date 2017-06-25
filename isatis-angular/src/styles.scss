@@ -27,6 +27,10 @@ a {
     color: map-get($mat-teal, 50);
 }
 
+.big-box {
+    padding: 20px;
+}
+
 #particles-js {
     canvas {
         display: block
