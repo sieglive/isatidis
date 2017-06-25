@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/theming';
+$config: mat-typography-config();
+@include mat-core();
 body {
     margin: 0px;
     min-width: 640px;
@@ -12,6 +15,16 @@ md-card.mat-card {
 .title {
     font-family: Raleway, Arial, Helvetica, sans-serif;
     font-size: 3em;
+}
+
+.grey-title {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    color: #aaaaaa;
+    font-size: 3em;
+}
+
+a {
+    color: map-get($mat-teal, 50);
 }
 
 #particles-js {
