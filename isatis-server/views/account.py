@@ -18,5 +18,5 @@ class Login(BaseHandler):
 
 
 ACCOUNT_URL = [
-    (r'/account/login', Login),
+    (r'/middle/account/login', Login),
 ]

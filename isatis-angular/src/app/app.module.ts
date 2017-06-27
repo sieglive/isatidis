@@ -12,6 +12,7 @@ import { AboutComponent } from 'app/comp/about/about.component';
 import { BulletinComponent } from 'app/comp/bulletin/bulletin.component';
 import { UserAuthComponent } from 'app/comp/user/user_auth.component'
 import { MaterialModule } from '@angular/material';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { ConvertFormat } from 'app/pipe/app.pipe';
 import { WindowRef } from 'app/service/window.service';
@@ -43,9 +44,12 @@ const appRoutes: Routes = [
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
+        HttpModule,
+        JsonpModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [WindowRef],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
+
