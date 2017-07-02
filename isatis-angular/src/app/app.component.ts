@@ -8,8 +8,8 @@ import { WindowRef } from 'app/service/window.service';
 })
 
 export class AppComponent implements OnInit {
-    disabled_background = false;
-    toggle = true;
+    private disabled_background = false;
+    private toggle = false;
     constructor(private winRef: WindowRef) { }
 
     ngOnInit() {

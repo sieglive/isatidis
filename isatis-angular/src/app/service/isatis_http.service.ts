@@ -7,24 +7,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class IsatisHttp {
-    private _http_res: BehaviorSubject<object> = new BehaviorSubject({});
 
     constructor(private http: Http) { }
 
-    get res(): any {
-        // let backOb: Observable<object> = null;
-        let backRes: object = null;
-        this._http_res.subscribe(res => backRes = res);
-        console.log('backRes', backRes);
-        return backRes;
-    }
-
-    set res(value: any) {
-        const back = this.get(value.url, value.params, res => { const body = res.json(); return body; });
-        back.subscribe(res => this._http_res.next(res))
-    }
-
-    get(url: string, params: object, callback: any): Observable<Object> {
+    get(url: string, params: object, extra: any, callback: any) {
         let requestUrl = url;
 
         // 拼接URL
@@ -37,9 +23,8 @@ export class IsatisHttp {
 
         // 去掉最后一个 &
         requestUrl = requestUrl.substring(0, requestUrl.length - 1);
-
-        return this.http.get(requestUrl)
-            .map(callback).catch(this.handleError);
+        const res = this.http.get(requestUrl).map(extra).catch(this.handleError)
+        return res.subscribe(callback);
     }
 
     private handleError(error: Response | any) {
