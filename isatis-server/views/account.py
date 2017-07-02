@@ -2,13 +2,22 @@
 """Account Views' Module"""
 
 import json
+import time
 from tornado.web import asynchronous
-from tornado.gen import coroutine
+from tornado.gen import coroutine, sleep
 from views import BaseHandler
 
 
 class Login(BaseHandler):
     """Handle Login Request."""
+    @asynchronous
+    @coroutine
+    def get(self, *_args, **_kwargs):
+        email = self.get_argument('email')
+        pswd = self.get_argument('password')
+        args = dict(email=email, password=pswd, time=time.time())
+        self.finish(json.dumps(args))
+
     @asynchronous
     @coroutine
     def post(self, *_args, **_kwargs):

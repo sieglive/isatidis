@@ -32,6 +32,7 @@ def isatis():
         tornado_app,
     )
     tornado_server.listen(7717)
+    print('start listen...')
     ioloop.IOLoop.instance().start()
 
 

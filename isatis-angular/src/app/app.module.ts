@@ -16,6 +16,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { ConvertFormat } from 'app/pipe/app.pipe';
 import { WindowRef } from 'app/service/window.service';
+import { IsatisHttp } from 'app/service/isatis_http.service';
 // import { BackgroundService } from 'app/background.service';
 
 const appRoutes: Routes = [
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
         JsonpModule,
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [WindowRef],
+    providers: [WindowRef, IsatisHttp],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

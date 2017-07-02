@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
-
+import { IsatisHttp } from 'app/service/isatis_http.service';
 
 @Component({
     selector: 'isatis-user-auth',
@@ -13,37 +8,47 @@ import 'rxjs/add/operator/map';
     styleUrls: ['./user_auth.component.scss']
 })
 export class UserAuthComponent {
-    private heroesUrl = '/middle/account/login';  // URL to web API
+    private user_email: string;
+    private user_password: string;
+    private resObject: object;
+    private res: object;
 
-    constructor(private http: Http) { }
+    constructor(private _http: IsatisHttp) { }
 
-    get_res() {
-        this.getRes().subscribe(res => { console.log(res); });
+    fetch() {
     }
 
-    getRes(): Observable<Object> {
-        console.log('test');
-        return this.http.post(this.heroesUrl, { email: "314624180@qq.com", password: "111111" })
-            .map(this.extractData).catch(this.handleError);
+    signIn() {
+        this._http.res = {
+            url: '/middle/account/login',
+            params: { email: this.user_email + '1', password: this.user_password }
+        };
+    }
+    signIn2() {
+        this._http.res = {
+            url: '/middle/account/login',
+            params: { email: this.user_email + '2', password: this.user_password }
+        };
+    }
+    signIn3() {
+        this.resObject = this._http.res;
+        console.log('component1', this.resObject);
+    }
+    signIn4() {
+        this.resObject = this._http.res;
+        console.log('component2', this.resObject);
     }
 
-    private extractData(res: Response) {
-        console.log(res);
-        let body = res.json();
-        return body.email || {};
-    }
+    // signUp() {
+    //     this._http.res = {
+    //         url: '/middle/account/login',
+    //         params: { email: this.user_email, password: this.user_password },
+    //         callback: res => {
+    //             const body = res.json();
+    //             return body;
+    //         }
+    //     }
+    //     console.log(this._http.res);
 
-    private handleError(error: Response | any) {
-        // In a real world app, you might use a remote logging infrastructure
-        let errMsg: string;
-        if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-        } else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return Observable.throw(errMsg);
-    }
+    // }
 }

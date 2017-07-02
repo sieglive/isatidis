@@ -18,8 +18,12 @@
                     <input mdInput [(ngModel)]="user_password" type="password" />
                 </md-input-container>
             </p>
-            <button md-button (click)="get_res()">Submit</button>
+            <button md-button (click)="signIn()">Submit</button>
+            <button md-button (click)="signIn2()">Submit</button>
+            <button md-button (click)="signIn3()">Submit</button>
+            <button md-button (click)="signIn4()">Submit</button>
         </div>
+        {{ resObject }}
     </md-tab>
     <md-tab label="Sign Up">
         <div class="big-box">
@@ -54,7 +58,7 @@
                     <input mdInput [(ngModel)]="user_password" type="password" />
                 </md-input-container>
             </p>
-            <button md-button>Submit</button>
+            <button md-button (click)="signUp()">Submit</button>
         </div>
     </md-tab>
 </md-tab-group>
