@@ -16,6 +16,7 @@ class Login(BaseHandler):
         email = self.get_argument('email')
         pswd = self.get_argument('password')
         args = dict(email=email, password=pswd, time=time.time())
+        yield sleep(2)
         self.finish(json.dumps(args))
 
     @asynchronous
