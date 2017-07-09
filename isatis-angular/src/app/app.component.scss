@@ -4,26 +4,18 @@ $config: mat-typography-config();
 $mycolor: map-get($mat-teal, 100);
 @keyframes logo {
     0% {
-        transform: rotate3d(0, 0, 2, -180deg);
-        -webkit-transform: rotate3d(0, 0, 2, -180deg);
-        -moz-transform: rotate3d(0, 0, 2, -180deg);
-        -o-transform: rotate3d(0, 0, 2, -180deg);
+        transform: rotate3d(0, 0, 2, -900deg);
     }
-    // 50% {
-    //     transform: rotate3d(0, 0, 2, 180deg);
-    //     -webkit-transform: rotate3d(0, 0, 2, 180deg);
-    //     -moz-transform: rotate3d(0, 0, 2, 180deg);
-    //     -o-transform: rotate3d(0, 0, 2, 180deg);
-    // }
     100% {
-        transform: rotate3d(0, 0, 2, 540deg);
-        -webkit-transform: rotate3d(0, 0, 2, 540deg);
-        -moz-transform: rotate3d(0, 0, 2, 540deg);
-        -o-transform: rotate3d(0, 0, 2, 540deg);
+        transform: rotate3d(0, 0, 2, 900deg);
     }
 }
 
 .site-logo {
+    animation: logo 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     width: 30px;
     height: 30px;
     stroke-width: "0";
