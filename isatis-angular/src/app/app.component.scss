@@ -2,7 +2,20 @@
 $config: mat-typography-config();
 @include mat-core();
 $mycolor: map-get($mat-teal, 100);
+@keyframes logo {
+    0% {
+        transform: rotate3d(0, 0, 2, -900deg);
+    }
+    100% {
+        transform: rotate3d(0, 0, 2, 900deg);
+    }
+}
+
 .site-logo {
+    animation: logo 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     width: 30px;
     height: 30px;
     stroke-width: "0";
