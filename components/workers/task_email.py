@@ -10,13 +10,14 @@ from jinja2 import Environment, PackageLoader
 
 from workers.manager import APP as app
 
+mail_host = ''
+mail_user = ''
+mail_pass = ''
+
 
 @app.task
 def send_email(subject, receivers, template_path, **values):
     """public email function."""
-    mail_host = "mail.wondershare.com"
-    mail_user = "esign@insidews.wondershare.com"
-    mail_pass = "UCV3G85t3jp5a"
     env = Environment(loader=PackageLoader('workers', 'templates'))
 
     template = env.get_template(template_path)
