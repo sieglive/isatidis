@@ -22,7 +22,6 @@ smtp_server = SMTP_SSL(smtpserver, 465)
 smtp_server.set_debuglevel(1)
 smtp_server.ehlo()
 smtp_server.login('account@isatidis.cn', 'Siegfried1314~~~')
-smtp_server.sendmail('account@isatidis.cn', ['314624180@qq.com'], mail.as_string())
+smtp_server.sendmail('account@isatidis.cn', [
+                     '314624180@qq.com'], mail.as_string())
 smtp_server.close()
-
-

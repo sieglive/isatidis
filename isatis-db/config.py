@@ -5,7 +5,8 @@ import os
 import yaml
 from tornado.options import define
 
-_ENV = os.getenv('esign_env')
+# _ENV = os.getenv('esign_env')
+_ENV = 'test'
 define('port', default=0)
 
 

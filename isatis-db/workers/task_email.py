@@ -10,10 +10,6 @@ from jinja2 import Environment, PackageLoader
 
 from workers.manager import APP as app
 
-mail_host = ''
-mail_user = ''
-mail_pass = ''
-
 
 @app.task
 def send_email(subject, receivers, template_path, **values):
@@ -61,21 +57,3 @@ def send_email(subject, receivers, template_path, **values):
         status=0,
         msg='Send email successfully.',
         data=values)
-
-
-def test():
-    """test function."""
-    this_subject = 'Python SMTP 邮件测试'
-    this_receivers = ['314624180@qq.com']
-
-    send_email(
-        subject=this_subject,
-        receivers=this_receivers,
-        template_path='email/activeEmail.html',
-        base_url='10.11.0.80',
-        base_static_url='//10.11.0.80/static',
-        email_address='sieglive@163.com', )
-
-
-if __name__ == '__main__':
-    test()

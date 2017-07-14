@@ -2,3 +2,6 @@ sqlalchemy
 tornado
 alembic
 pymongo
+jinja2
+celery
+yaml

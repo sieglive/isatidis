@@ -19,8 +19,8 @@ SESS = sessionmaker(bind=DB_ENGINE)
 
 APP = Celery(
     'tasks',
-    backend=config.converter.celery.backend,
-    broker=config.converter.celery.broker, )
+    backend=config.celery.backend,
+    broker=config.celery.broker, )
 
 APP.conf.update(
     task_serializer='json',
@@ -31,18 +31,6 @@ APP.conf.update(
     task_default_exchange_type='topic',
     task_default_routing_key='task.default',
     task_routes={
-        'workers.task_database.*': {
-            'queue': env + '_database'
-        },
-        'workers.task_payment.*': {
-            'queue': env + '_payment'
-        },
-        'workers.task_upload.*': {
-            'queue': env + '_upload'
-        },
-        'workers.task_convert.*': {
-            'queue': env + '_convert'
-        },
         'workers.task_email.*': {
             'queue': env + '_email'
         },
