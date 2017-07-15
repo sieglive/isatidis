@@ -3,7 +3,7 @@
 
         <span>
             <a routerLink="/">
-                <button md-button>
+                <button md-button isatis-logo>
     <svg class="site-logo" style="width:30px;height:30px;">
         <defs>
             <filter id="Gaussian_Blur">
@@ -33,14 +33,14 @@
         </a>
         </span>
         <span class="example-spacer"></span>
-        <button *ngIf="toggle" md-button (click)="clean_bg()"><md-icon>info</md-icon><span class="normal-nav"> CLEAN</span></button>
+        <!-- <button *ngIf="toggle" md-button (click)="clean_bg()"><md-icon>info</md-icon><span class="normal-nav"> CLEAN</span></button> -->
         <span>
-            <button md-button [mdMenuTriggerFor]="menu"><md-icon>dehaze</md-icon><span class="normal-nav"> MENU</span></button>
+            <button md-button [mdMenuTriggerFor]="menu"><span class="normal-nav"> MENU</span></button>
         <md-menu #menu="mdMenu">
             <a routerLink="auth"><button md-menu-item><md-icon>flight_land</md-icon><span class="normal-nav"> LOG IN</span></button></a>
             <a routerLink="profile"><button md-menu-item><md-icon>flight_takeoff</md-icon><span class="normal-nav"> LOG OUT</span></button></a>
 
-            <span><md-slide-toggle (change)="change_bg()" [(ngModel)]="toggle">BG SWITCH</md-slide-toggle></span>
+            <!-- <span><md-slide-toggle (change)="change_bg()" [(ngModel)]="toggle">BG SWITCH</md-slide-toggle></span> -->
 
         </md-menu>
         </span>
