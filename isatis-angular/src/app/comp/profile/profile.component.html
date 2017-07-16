@@ -2,5 +2,28 @@
     <div class="title">
         Profile of Plank Root
     </div>
-    <p class="welcome">Hello <span class="name">Water What</span> ~ Here is my new profile.</p>
+    <div class="container">
+        <div class="con-left">
+            <md-list>
+                <md-list-item *ngFor="let property of properties">
+                    <p class="long-input">
+                        <md-input-container class="long-input">
+                            <md-placeholder>
+                                {{property.name}}
+                                <md-icon>mode_edit</md-icon>
+                            </md-placeholder>
+                            <input mdInput [(ngModel)]="property.value" type="text" />
+                        </md-input-container>
+                    </p>
+                </md-list-item>
+            </md-list>
+        </div>
+        <div class="con-right">
+
+            <button md-raised-button class="avatar">
+                    <img src="assets/avatar.jpg" />
+                </button>
+
+        </div>
+    </div>
 </md-card>

@@ -1,0 +1,22 @@
+.long-input {
+    width: 95%;
+}
+
+.avatar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.con-left {
+    flex: 1;
+    flex-grow: 2;
+}
+
+.con-right {
+    background: #b9f6ca;
+}
