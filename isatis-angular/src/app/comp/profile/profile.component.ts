@@ -7,23 +7,27 @@ import { Component, OnChanges, DoCheck } from '@angular/core';
 })
 export class ProfileComponent implements OnChanges, DoCheck {
     public user_email = '';
-    public user_pass = '';
+    public user_account = '';
     public user_name = '';
     public user_nick = '';
     public properties = [
-        { name: 'user_nick', value: this.user_nick },
-        { name: 'user_pass', value: this.user_pass },
-        { name: 'user_name', value: this.user_name },
-        { name: 'user_email', value: this.user_email }
+        { name: 'Nick Name', value: this.user_nick },
+        { name: 'Account', value: this.user_account },
+        { name: 'True Name', value: this.user_name },
+        { name: 'Email', value: this.user_email }
     ]
 
     ngOnChanges(change) {
         console.log(change);
-        console.log(this.user_nick, this.user_pass, this.user_name, this.user_email);
+        console.log(this.user_nick, this.user_account, this.user_name, this.user_email);
     }
 
 
     ngDoCheck() {
         console.log(this.properties);
+    }
+
+    test() {
+        console.log('cancle');
     }
 }

@@ -2,9 +2,21 @@
     width: 95%;
 }
 
+.property-title {
+    text-align: justify;
+    width: 150px;
+}
+
 .avatar {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin-top: 25px;
+    padding: 0px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
 }
 
 .container {
@@ -18,5 +30,15 @@
 }
 
 .con-right {
-    background: #b9f6ca;
+    width: 300px;
+    text-align: center;
+}
+
+.footer {
+    text-align: left;
+    button {
+        margin-left: 20px;
+        width: 150px;
+        height: 50px;
+    }
 }

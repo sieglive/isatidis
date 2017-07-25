@@ -4,6 +4,7 @@
 $config: mat-typography-config();
 @include mat-core();
 body {
+    background: #e3f2fd;
     margin: 0px;
     min-width: 640px;
 }
@@ -35,7 +36,7 @@ a {
     canvas {
         display: block
     }
-    background: #fcfcfc;
+    background: #e3f2fd;
     position: fixed;
     top: 0;
     z-index: -1;
@@ -55,6 +56,9 @@ a {
         width: 1280px;
         margin: 0 auto;
         padding: 20px;
+    }
+    md-toolbar.mat-toolbar {
+        box-shadow: 0px 1px 10px #202020;
     }
 }
 
