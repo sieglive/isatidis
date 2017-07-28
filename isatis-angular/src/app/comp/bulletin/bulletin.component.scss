@@ -7,10 +7,14 @@ $mycolor: map-get($mat-orange, 800);
     text-align: center;
 }
 
-.mat-fab.mat-accent {
-    color: map-get($mat-teal, 50);
+.tips {
+    margin-bottom: 30px;
+    text-align: left;
 }
 
+// .mat-fab.mat-accent {
+//     color: map-get($mat-teal, 50);
+// }
 .name {
     color: $mycolor;
     font-size: 2em;

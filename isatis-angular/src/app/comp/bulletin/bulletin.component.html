@@ -1,9 +1,15 @@
 <div class="example-container">
     <div class="add-button">
-        <p class="grey-title">
+        <p *ngIf="!tip_list.length" class="grey-title">
             no tips here, try to add one
         </p>
-        <a md-fab routerLink="/">
+        <md-card *ngFor="let tip of tip_list" class="tips">
+            <div class="title">
+                About Plank Blog
+            </div>
+            <p class="welcome">Hello <span class="name">Water What</span> ~ Here is my new site.</p>
+        </md-card>
+        <a md-fab color="primary" routerLink="/">
             <md-icon>add</md-icon>
         </a>
     </div>

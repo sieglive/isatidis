@@ -3,14 +3,21 @@
 @import '~@angular/material/theming';
 $config: mat-typography-config();
 @include mat-core();
-body {
-    background: #e3f2fd;
-    margin: 0px;
-    min-width: 640px;
+html {
+    height: 100%;
 }
 
-md-card.mat-card {
-    background: rgba(255, 255, 255, 0.7);
+body {
+    background: #e3f2fd;
+    margin: 0px 0px 0px 0px;
+    // min-width: 640px;
+    height: 100%;
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
 .title {
@@ -18,18 +25,8 @@ md-card.mat-card {
     font-size: 3em;
 }
 
-.grey-title {
-    font-family: Lato, Arial, Helvetica, sans-serif;
-    color: #aaaaaa;
-    font-size: 3em;
-}
-
-a {
-    color: map-get($mat-teal, 50);
-}
-
-.big-box {
-    padding: 20px;
+md-card.mat-card {
+    background: rgba(255, 255, 255, 0.7);
 }
 
 #particles-js {
@@ -44,35 +41,48 @@ a {
     height: 100%
 }
 
-@media screen and (min-width: 1280px) {
-    content.isatis-nav {
+.isatis-nav {
+    position: fixed;
+    z-index: 2;
+}
+
+@media screen and (min-width: 640px) {
+    content.isatis-nav-container {
         display: flex;
-        width: 1280px;
+        width: 100%;
         margin: 0 auto;
-        padding: 20px;
     }
     content.isatis-article {
         display: block;
-        width: 1280px;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
         margin: 0 auto;
-        padding: 20px;
+        padding-top: 94px;
+        padding-left: 50px;
+        padding-right: 50px;
+        box-sizing: border-box;
     }
     md-toolbar.mat-toolbar {
         box-shadow: 0px 1px 10px #202020;
     }
 }
 
-@media screen and (max-width: 1280px) {
-    content.isatis-nav {
+@media screen and (max-width: 640px) {
+    content.isatis-nav-container {
         display: flex;
         width: 100%;
         margin: 0 auto;
-        padding: 20px;
     }
     content.isatis-article {
         display: block;
-        width: calc(100% - 40px);
+        height: 100%;
+        width: 100%;
+        overflow: auto;
         margin: 0 auto;
-        padding: 20px;
+        padding-top: 64px;
+        padding-left: 25px;
+        padding-right: 25px;
+        box-sizing: border-box;
     }
 }
