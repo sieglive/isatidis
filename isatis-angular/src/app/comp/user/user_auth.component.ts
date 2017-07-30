@@ -15,6 +15,8 @@ export class UserAuthComponent {
     public result: any;
     public user_time: number;
 
+    position = 'above';
+
     constructor(private _http: IsatisHttp) { }
 
     fetch() {

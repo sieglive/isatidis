@@ -5,9 +5,9 @@
         </p>
         <md-card *ngFor="let tip of tip_list" class="tips">
             <div class="title">
-                About Plank Blog
+                {{ tip.title }}
             </div>
-            <p class="welcome">Hello <span class="name">Water What</span> ~ Here is my new site.</p>
+            <p class="welcome">{{ tip.content }}</p>
         </md-card>
         <a md-fab color="primary" routerLink="/">
             <md-icon>add</md-icon>

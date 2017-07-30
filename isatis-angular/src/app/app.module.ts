@@ -10,10 +10,13 @@ import { ArticleComponent } from 'app/comp/article/article.component';
 import { ProfileComponent } from 'app/comp/profile/profile.component';
 import { AboutComponent } from 'app/comp/about/about.component';
 import { BulletinComponent } from 'app/comp/bulletin/bulletin.component';
-import { UserAuthComponent } from 'app/comp/user/user_auth.component'
+import { UserAuthComponent } from 'app/comp/user/user_auth.component';
+import { EditorComponent } from 'app/comp/editor/editor.component';
 import { MaterialModule } from '@angular/material';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
+import { MarkdownModule } from 'angular2-markdown';
 import { ConvertFormat } from 'app/pipe/app.pipe';
 import { WindowRef } from 'app/service/window.service';
 import { IsatisHttp } from 'app/service/isatis_http.service';
@@ -27,6 +30,7 @@ const appRoutes: Routes = [
     { path: 'article', component: ArticleComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'editor', component: EditorComponent }
 ];
 
 @NgModule({
@@ -38,6 +42,7 @@ const appRoutes: Routes = [
         AboutComponent,
         BulletinComponent,
         UserAuthComponent,
+        EditorComponent,
         ConvertFormat
     ],
     imports: [
@@ -47,6 +52,9 @@ const appRoutes: Routes = [
         MaterialModule,
         HttpModule,
         JsonpModule,
+        MarkdownModule.forRoot(),
+        FroalaEditorModule.forRoot(),
+        FroalaViewModule.forRoot(),
         RouterModule.forRoot(appRoutes)
     ],
     providers: [WindowRef, IsatisHttp],

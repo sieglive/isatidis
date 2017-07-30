@@ -3,59 +3,51 @@
         <div class="big-box">
             <p>
                 <md-input-container class="long-input">
-                    <md-placeholder>
-                        Email or Account Name
-                        <md-icon>mode_edit</md-icon>
-                    </md-placeholder>
-                    <input mdInput [(ngModel)]="user_email" />
+                    <input mdInput mdTooltip="Enter Your Email or Account Name" [mdTooltipPosition]="position" [(ngModel)]=" user_email " />
                 </md-input-container>
                 <br/>
-                <md-input-container class="long-input">
-                    <md-placeholder>
-                        Password
-                        <md-icon>mode_edit</md-icon>
-                    </md-placeholder>
-                    <input mdInput [(ngModel)]="user_password" type="password" />
+                <md-input-container class="long-input ">
+                    <input mdInput mdTooltip="Enter Your Password" [mdTooltipPosition]="position" [(ngModel)]="user_password " type="password " />
                 </md-input-container>
             </p>
-            <button md-raised-button (click)="signIn()">Submit</button>
+            <button md-raised-button (click)="signIn() ">Submit</button>
         </div>
         {{ user_time }}
     </md-tab>
-    <md-tab label="Sign Up">
+    <md-tab label="Sign Up ">
         <div class="big-box">
             <p>
-                <md-input-container class="long-input">
+                <md-input-container class="long-input ">
                     <md-placeholder>
                         Nick Name
                         <md-icon>mode_edit</md-icon>
                     </md-placeholder>
-                    <input mdInput [(ngModel)]="user_nick" />
+                    <input mdInput [(ngModel)]="user_nick " />
                 </md-input-container>
-                <md-input-container class="long-input">
+                <md-input-container class="long-input ">
                     <md-placeholder>
                         Account Name
                         <md-icon>mode_edit</md-icon>
                     </md-placeholder>
-                    <input mdInput [(ngModel)]="user_account" />
+                    <input mdInput [(ngModel)]="user_account " />
                 </md-input-container>
-                <md-input-container class="long-input">
+                <md-input-container class="long-input ">
                     <md-placeholder>
                         Email
                         <md-icon>mode_edit</md-icon>
                     </md-placeholder>
-                    <input mdInput [(ngModel)]="user_email" />
+                    <input mdInput [(ngModel)]="user_email " />
                 </md-input-container>
                 <br/>
-                <md-input-container class="long-input">
+                <md-input-container class="long-input ">
                     <md-placeholder>
                         Password
                         <md-icon>mode_edit</md-icon>
                     </md-placeholder>
-                    <input mdInput [(ngModel)]="user_password" type="password" />
+                    <input mdInput [(ngModel)]="user_password " type="password " />
                 </md-input-container>
             </p>
-            <button md-raised-button (click)="signUp()">Submit</button>
+            <button md-raised-button (click)="signUp() ">Submit</button>
         </div>
     </md-tab>
 </md-tab-group>

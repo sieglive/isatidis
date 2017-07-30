@@ -28,6 +28,9 @@ $mycolor: map-get($mat-orange, 800);
 
 .mat-input-container {
     width: 100%;
+    .mat-input-infix {
+        background: rgba(0, 0, 0, .26);
+    }
 }
 
 .mat-input-container .mat-datepicker-toggle,

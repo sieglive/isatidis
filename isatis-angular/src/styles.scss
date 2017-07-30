@@ -64,7 +64,8 @@ md-card.mat-card {
         box-sizing: border-box;
     }
     md-toolbar.mat-toolbar {
-        box-shadow: 0px 1px 10px #202020;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+        ;
     }
 }
 

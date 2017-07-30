@@ -11,12 +11,13 @@
                     Whatever you like
                     <md-icon>mode_edit</md-icon>
                 </md-placeholder>
-                <textarea mdInput [(ngModel)]="selectTitle"></textarea>
+                <textarea mdInput mdTextareaAutosize mdErrorDirective [(ngModel)]="selectTitle"></textarea>
             </md-input-container>
         </div>
-        <div *ngIf="selectTitle" class="myinput">
+        <!-- <div *ngIf="selectTitle" class="myinput">
             <p>My Input is:</p>
             <span *ngFor="let thistitle of selectTitle.split('\n')" class="name">{{ thistitle | convert }}<br/></span>
-        </div>
+        </div> -->
+        <markdown class="myinput" [data]="selectTitle"></markdown>
     </md-card>
 </content>

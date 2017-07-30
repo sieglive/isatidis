@@ -3,7 +3,18 @@ $config: mat-typography-config();
 @include mat-core();
 $mycolor: map-get($mat-teal, 100);
 .long-input {
-    width: 70%;
+    width: 30%;
+    min-width: 340px;
+    .input-pre {
+        font-size: 1.2em;
+        font-weight: bold;
+        font-family: Raleway, Arial, Helvetica, sans-serif;
+        width: 140px;
+    }
+}
+
+.big-box {
+    margin: 20px;
 }
 
 // button.mat-raised-button {
