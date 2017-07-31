@@ -6,10 +6,14 @@ import { MarkdownService } from 'angular2-markdown';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnChanges, AfterContentChecked {
+export class HomeComponent implements OnChanges {
     public selectTitle = '# Markdown content data';
+    public min_rows = 20;
+    public max_rows = 20;
+    public tab_position = 'bellow';
     @Input() title: String;
     constructor(private _markdown: MarkdownService) { }
+
     // this.selectTitle = this.title;
 
     // onSelect(title: String): void {
@@ -23,10 +27,6 @@ export class HomeComponent implements OnChanges, AfterContentChecked {
         // this._markdown.renderer.blockquote = (quote: string) => {
         //     return `<blockquote class="king-quote">${quote}</blockquote>`;
         // }
-    }
-    ngAfterContentChecked() {
-        // const a = this._markdown.compile(this.selectTitle);
-        // console.log(a);
     }
 
     // update_title_on_key(event: any, title: String) {

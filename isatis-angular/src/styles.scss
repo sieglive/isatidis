@@ -61,11 +61,12 @@ md-card.mat-card {
         padding-top: 94px;
         padding-left: 50px;
         padding-right: 50px;
+        padding-bottom: 5px;
         box-sizing: border-box;
+        background: rgba(0, 0, 0, 0);
     }
     md-toolbar.mat-toolbar {
         box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
-        ;
     }
 }
 
@@ -84,6 +85,8 @@ md-card.mat-card {
         padding-top: 64px;
         padding-left: 25px;
         padding-right: 25px;
+        padding-bottom: 5px;
         box-sizing: border-box;
+        background: rgba(0, 0, 0, 0);
     }
 }
