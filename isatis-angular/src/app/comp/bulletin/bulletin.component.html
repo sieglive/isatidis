@@ -4,12 +4,12 @@
             no tips here, try to add one
         </p>
         <md-card *ngFor="let tip of tip_list" class="tips">
-            <div class="title">
+            <div class="title" id="{{tip.id}}">
                 {{ tip.title }}
             </div>
             <p class="welcome">{{ tip.content }}</p>
         </md-card>
-        <a md-fab color="primary" routerLink="/">
+        <a md-fab color="primary" routerLink="/bulletin" fragment="A">
             <md-icon>add</md-icon>
         </a>
     </div>

@@ -2,6 +2,10 @@
 $config: mat-typography-config();
 @include mat-core();
 $mycolor: map-get($mat-orange, 800);
+.isatis-home {
+    padding-top: 30px;
+}
+
 .name {
     color: $mycolor;
     font-size: 2em;
@@ -20,8 +24,6 @@ $mycolor: map-get($mat-orange, 800);
 .myinput {
     font-family: Raleway, Arial, Helvetica, sans-serif;
     max-width: 100%;
-    height: 420px;
-    overflow: auto;
     font-size: 1.5em;
 }
 
@@ -34,9 +36,4 @@ $mycolor: map-get($mat-orange, 800);
 
 .mat-tab-label {
     width: 50%;
-}
-
-.md-editor {
-    overflow: auto;
-    height: 518px;
 }

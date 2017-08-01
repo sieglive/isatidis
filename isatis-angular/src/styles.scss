@@ -46,6 +46,16 @@ md-card.mat-card {
     z-index: 2;
 }
 
+.top-white {
+    padding-top: 64px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.page-container {
+    padding-top: 30px;
+}
+
 @media screen and (min-width: 640px) {
     content.isatis-nav-container {
         display: flex;
@@ -56,9 +66,8 @@ md-card.mat-card {
         display: block;
         height: 100%;
         width: 100%;
-        overflow: auto;
+        overflow: scroll;
         margin: 0 auto;
-        padding-top: 94px;
         padding-left: 50px;
         padding-right: 50px;
         padding-bottom: 5px;
@@ -80,9 +89,8 @@ md-card.mat-card {
         display: block;
         height: 100%;
         width: 100%;
-        overflow: auto;
+        overflow: scroll;
         margin: 0 auto;
-        padding-top: 64px;
         padding-left: 25px;
         padding-right: 25px;
         padding-bottom: 5px;

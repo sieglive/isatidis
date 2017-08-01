@@ -20,13 +20,14 @@ import { MarkdownModule } from 'angular2-markdown';
 import { ConvertFormat } from 'app/pipe/app.pipe';
 import { WindowRef } from 'app/service/window.service';
 import { IsatisHttp } from 'app/service/isatis_http.service';
+import { Scrollor } from 'app/service/scrollor.service';
 // import { BackgroundService } from 'app/background.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'bulletin', pathMatch: 'full' },
     { path: 'auth', component: UserAuthComponent },
     { path: 'bulletin', component: BulletinComponent },
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: HomeComponent, pathMatch: 'full' },
     { path: 'article', component: ArticleComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'about', component: AboutComponent },
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
         FroalaViewModule.forRoot(),
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [WindowRef, IsatisHttp],
+    providers: [WindowRef, IsatisHttp, Scrollor],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
