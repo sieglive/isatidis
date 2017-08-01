@@ -1,6 +1,6 @@
-import { Component, OnInit, Directive, ViewChild, AfterViewInit } from '@angular/core';
-// import { WindowRef } from 'app/service/window.service';
-// import { BackgroundService } from 'app/background.service';
+import { Component, OnInit, Directive, ViewChild } from '@angular/core';
+
+import { Scrollor } from 'app/service/scrollor.service';
 
 
 @Component({
@@ -9,23 +9,40 @@ import { Component, OnInit, Directive, ViewChild, AfterViewInit } from '@angular
     styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
     private disabled_background = false;
-    // private toggle = false;
-    constructor() { }
+    public element: any
+    public show_scroll: boolean;
+    constructor(private _scrollor: Scrollor) {
+    }
 
     ngOnInit() {
-        // if (this.toggle) {
-        //     this.winRef.nativeWindow.particlesJS.load('particles-js', 'assets/particles.json', function () {
-        //         console.log('callback - particles.js config loaded');
-        //     });
-        // }
+        this.element = document.querySelector('#ccc');
+        console.log(this.element);
     }
 
-    ngAfterViewInit() {
+    scroll_top() {
+        this._scrollor.scroll_top(this.element);
     }
 
+    scroll_bottom() {
+        this._scrollor.scroll_bottom(this.element);
+    }
+
+    figure_pos() {
+        this._scrollor.figure_pos(this.element);
+    }
+
+    figure_scroll_top() {
+        if (this.element.scrollTop > 100) {
+            this.show_scroll = true;
+            return true;
+        } else {
+            this.show_scroll = false;
+            return false;
+        }
+    }
     // change_bg() {
     //     if (this.toggle) {
     //         this.winRef.nativeWindow.pJSDom = [];

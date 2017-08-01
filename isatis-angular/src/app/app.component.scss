@@ -67,3 +67,29 @@ md-icon {
 .mat-sidenav-container {
     background: inherit;
 }
+
+.scroll-top-button {
+    position: fixed;
+    right: 40px;
+    bottom: 110px;
+    z-index: 2;
+    text-align: center;
+    font-size: 1.5em;
+    .mat-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.scroll-bottom-button {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 2;
+    text-align: center;
+    font-size: 1.5em;
+    .mat-icon {
+        width: 50px;
+        height: 50px;
+    }
+}

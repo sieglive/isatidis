@@ -23,12 +23,14 @@
         <md-menu #menu="mdMenu">
             <button md-menu-item routerLink="auth"><md-icon>flight_land</md-icon> LOG IN</button>
             <button md-menu-item routerLink="profile"><md-icon>flight_takeoff</md-icon> LOG OUT</button>
-            <button type="button" md-button (click)="sidenav.toggle()">      Open sidenav    </button>
         </md-menu>
     </content>
 </md-toolbar>
 <div class="top-white">
-    <content class="isatis-article" id="ccc">
+    <content class="isatis-article" id="ccc" (scroll)="figure_scroll_top()">
         <router-outlet></router-outlet>
     </content>
 </div>
+
+<button md-fab (click)="scroll_top()" class="scroll-top-button" *ngIf="show_scroll"><md-icon>expand_less</md-icon></button>
+<button md-fab (click)="scroll_bottom()" class="scroll-bottom-button"><md-icon>expand_more</md-icon></button>

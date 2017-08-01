@@ -2,50 +2,49 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Scrollor {
-    public element = document.querySelector('#ccc');
 
-    scroll_top() {
-        if (this.element) {
-            let sss = this.element.scrollTop;
+    scroll_top(el) {
+        if (el) {
+            let sss = el.scrollTop;
             const delta = sss / 15;
             if (sss > 0) {
                 const ccc = setInterval(() => {
                     sss -= delta;
-                    this.element.scrollTop = sss;
+                    el.scrollTop = sss;
                     if (sss <= 0) {
-                        clearInterval(ccc)
+                        clearInterval(ccc);
                     }
-                }, 5)
+                }, 5);
             }
         }
     }
 
-    scroll_bottom() {
-        if (this.element) {
-            const total = this.element.scrollHeight - this.element.clientHeight;
-            let sss = this.element.scrollTop;
+    scroll_bottom(el) {
+        if (el) {
+            const total = el.scrollHeight - el.clientHeight;
+            let sss = el.scrollTop;
             const delta = (total - sss) / 15;
             if (sss < total) {
                 const ccc = setInterval(() => {
                     sss += delta;
-                    this.element.scrollTop = sss;
+                    el.scrollTop = sss;
                     if (sss >= total) {
-                        clearInterval(ccc)
+                        clearInterval(ccc);
                     }
-                }, 5)
+                }, 5);
             }
         }
     }
 
-    figure_pos() {
-        if (this.element) {
-            console.log('scrollheight', this.element.scrollHeight);
-            console.log('clientheight', this.element.clientHeight);
-            console.log('scrolltop', this.element.scrollTop);
+    figure_pos(el) {
+        if (el) {
+            console.log('scrollheight', el.scrollHeight);
+            console.log('clientheight', el.clientHeight);
+            console.log('scrolltop', el.scrollTop);
 
             // element.scrollIntoView(true);
         }
-        return this.element;
+        return el;
     }
 
 

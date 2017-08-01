@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./editor.component.scss']
 })
 export class EditorComponent {
+    public selectTitle = 'this is a title';
 }

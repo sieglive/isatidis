@@ -36,6 +36,7 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
     public dynamic_height = true;
     public tab_position = 'bellow';
     public anchor_tip = { name: 'top' };
+    public element = document.querySelector('#ccc');
     @ViewChild('duInput') du_input;
     @ViewChild('duOutput') du_output;
 
@@ -81,15 +82,18 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
     }
 
     scroll_top() {
-        this._scrollor.scroll_top();
+        this.element = document.querySelector('#ccc');
+        this._scrollor.scroll_top(this.element);
     }
 
     scroll_bottom() {
-        this._scrollor.scroll_bottom();
+        this.element = document.querySelector('#ccc');
+        this._scrollor.scroll_bottom(this.element);
     }
 
     figure_pos() {
-        this._scrollor.figure_pos();
+        this.element = document.querySelector('#ccc');
+        this._scrollor.figure_pos(this.element);
     }
     // update_title_on_key(event: any, title: String) {
     //     if (event.key === 'Enter') {
