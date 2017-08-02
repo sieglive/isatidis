@@ -139,12 +139,10 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     }
 
     select1() {
-        this.tab_select = 1;
         this.tab_select = 0;
     }
 
     select2() {
-        this.tab_select = 0;
         this.tab_select = 1;
     }
     // update_title_on_key(event: any, title: String) {
@@ -160,11 +158,8 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
         // console.log(this.tab_height_1, this.tab_height_2);
         this.tab_select = event;
         const element_list = this.el.nativeElement.querySelectorAll('pre code');
-        console.log(element_list);
         for (let i = 0; i < element_list.length; i++) {
-            console.log(element_list[i]);
             this._hljsservice.highlight(element_list[i]);
         }
-
     }
 }
