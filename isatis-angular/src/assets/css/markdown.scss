@@ -106,7 +106,7 @@ markdown {
     code,
     pre {
         font-family: Consolas, Monaco, Andale Mono, monospace;
-        background-color: #f7f7f7;
+        background-color: map-get($mat-teal, 50);
         color: inherit;
     }
     code {
@@ -118,7 +118,9 @@ markdown {
         line-height: 1.7em;
         overflow: auto;
         padding: 6px 10px;
-        border-left: 5px solid #6CE26C;
+        border: 1px solid map-get($mat-teal, 100);
+        border-left: 5px solid map-get($mat-teal, 500);
+        border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
     }
     pre>code {
         font-family: Consolas, Monaco, Andale Mono, monospace;

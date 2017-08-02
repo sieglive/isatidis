@@ -15,6 +15,7 @@ import { EditorComponent } from 'app/comp/editor/editor.component';
 import { MaterialModule } from '@angular/material';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import { MarkdownModule } from 'angular2-markdown';
 import { ConvertFormat } from 'app/pipe/app.pipe';
@@ -53,12 +54,13 @@ const appRoutes: Routes = [
         MaterialModule,
         HttpModule,
         JsonpModule,
+        HighlightJsModule,
         MarkdownModule.forRoot(),
         FroalaEditorModule.forRoot(),
         FroalaViewModule.forRoot(),
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [WindowRef, IsatisHttp, Scrollor],
+    providers: [WindowRef, IsatisHttp, Scrollor, HighlightJsService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

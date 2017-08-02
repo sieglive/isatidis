@@ -1,6 +1,18 @@
-import { Component, Input, ViewChild, OnInit, OnChanges, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterContentInit } from '@angular/core';
+import {
+    Component,
+    ElementRef,
+    Input,
+    ViewChild,
+    OnInit,
+    OnChanges,
+    AfterContentChecked,
+    AfterViewChecked,
+    AfterViewInit,
+    AfterContentInit
+} from '@angular/core';
 import { MarkdownService } from 'angular2-markdown';
 import { Scrollor } from 'app/service/scrollor.service';
+import { HighlightJsService } from 'angular2-highlight-js';
 
 import {
     trigger,
@@ -49,7 +61,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     @Input() title: String;
     constructor(
         private _markdown: MarkdownService,
-        private _scrollor: Scrollor
+        private _scrollor: Scrollor,
+        private el: ElementRef,
+        private _hljsservice: HighlightJsService
     ) { }
 
     ngOnInit() {
@@ -61,6 +75,13 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     }
 
     ngAfterViewInit() {
+        this.element = this.el.nativeElement.querySelector('pre');
+        if (this.element) {
+            console.log(this.element);
+            this._hljsservice.highlight(this.element);
+        }
+
+
         // console.log('view', this.element.scrollTop, this.element.scrollHeight);
     }
 
@@ -138,5 +159,12 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     select_change(event) {
         // console.log(this.tab_height_1, this.tab_height_2);
         this.tab_select = event;
+        const element_list = this.el.nativeElement.querySelectorAll('pre code');
+        console.log(element_list);
+        for (let i = 0; i < element_list.length; i++) {
+            console.log(element_list[i]);
+            this._hljsservice.highlight(element_list[i]);
+        }
+
     }
 }
