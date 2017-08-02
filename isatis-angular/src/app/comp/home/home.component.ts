@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     @Input() title: String;
     constructor(
         private _markdown: MarkdownService,
-        private _scrollor: Scrollor,
+        public _scrollor: Scrollor,
         private el: ElementRef,
         private _hljsservice: HighlightJsService
     ) { }

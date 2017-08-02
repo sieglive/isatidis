@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     private disabled_background = false;
     public element: any
 
-    constructor(private _scrollor: Scrollor) {
+    constructor(public _scrollor: Scrollor) {
     }
 
     ngOnInit() {
