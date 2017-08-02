@@ -4,23 +4,22 @@
             Home Page
         </div>
         <p class="unicorn-title">Hello there~, write something here, see what happen~</p>
-        <md-tab-group MdTabGroup [dynamicHeight]="dynamic_height" class="md-editor">
+        <md-tab-group MdTabGroup [dynamicHeight]="dynamic_height" [selectedIndex]="tab_select" (selectedIndexChange)="select_change($event)" disableRipple="false" class="md-editor">
             <md-tab label="Input" #duInput>
-                <div class="input-test">
+                <div class="input-test" id="tab1">
                     <md-input-container>
                         <textarea mdInput mdTextareaAutosize [(ngModel)]="selectTitle" [mdAutosizeMinRows]="min_rows"></textarea>
                     </md-input-container>
                 </div>
             </md-tab>
             <md-tab label="Output" #duOutput>
-                <!-- <div *ngIf="selectTitle" class="myinput">
-            <p>My Input is:</p>
-            <span *ngFor="let thistitle of selectTitle.split('\n')" class="name">{{ thistitle | convert }}<br/></span>
-        </div> -->
-                <markdown [data]="selectTitle"></markdown>
+                <div id="tab2">
+                    <markdown [data]="selectTitle"></markdown>
+                </div>
             </md-tab>
 
         </md-tab-group>
-        <a routerLink="/home" fragment="top">lcick</a>
+        <button md-fab (click)="select1()" class="markdown-editor" *ngIf="_scrollor.show_scroll"><md-icon class="big-icon">navigate_before</md-icon></button>
+        <button md-fab (click)="select2()" class="markdown-showup" *ngIf="_scrollor.show_scroll"><md-icon class="big-icon">navigate_next</md-icon></button>
     </md-card>
 </div>

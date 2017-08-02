@@ -18,8 +18,9 @@
         "testTsconfig": "tsconfig.spec.json",
         "prefix": "isatis",
         "styles": [
-            "styles.scss",
-            "md.scss",
+            "assets/css/styles.scss",
+            "assets/css/md.scss",
+            "assets/css/markdown.scss",
             "../node_modules/font-awesome/css/font-awesome.css"
         ],
         "scripts": [

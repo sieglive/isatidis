@@ -37,3 +37,31 @@ $mycolor: map-get($mat-orange, 800);
 .mat-tab-label {
     width: 50%;
 }
+
+.markdown-editor {
+    right: 180px;
+    bottom: 40px;
+}
+
+.markdown-showup {
+    right: 110px;
+    bottom: 40px;
+}
+
+#tab2 {
+    height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+markdown {
+    max-width: 100%;
+    p {
+        max-width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+}

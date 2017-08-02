@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
     private disabled_background = false;
     public element: any
-    public show_scroll: boolean;
+
     constructor(private _scrollor: Scrollor) {
     }
 
@@ -35,13 +35,7 @@ export class AppComponent implements OnInit {
     }
 
     figure_scroll_top() {
-        if (this.element.scrollTop > 100) {
-            this.show_scroll = true;
-            return true;
-        } else {
-            this.show_scroll = false;
-            return false;
-        }
+        this._scrollor.figure_scroll_top(this.element);
     }
     // change_bg() {
     //     if (this.toggle) {

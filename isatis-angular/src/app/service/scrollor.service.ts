@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Scrollor {
+    public show_scroll: boolean;
 
     scroll_top(el) {
         if (el) {
@@ -16,6 +17,8 @@ export class Scrollor {
                     }
                 }, 5);
             }
+        } else {
+            console.log(el);
         }
     }
 
@@ -33,6 +36,8 @@ export class Scrollor {
                     }
                 }, 5);
             }
+        } else {
+            console.log(el);
         }
     }
 
@@ -47,5 +52,13 @@ export class Scrollor {
         return el;
     }
 
-
+    figure_scroll_top(el) {
+        if (el.scrollTop > 230) {
+            this.show_scroll = true;
+            return true;
+        } else {
+            this.show_scroll = false;
+            return false;
+        }
+    }
 }

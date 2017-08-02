@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, AfterContentChecked, AfterViewInit, ViewChild, AfterContentInit } from '@angular/core';
+import { Component, Input, ViewChild, OnInit, OnChanges, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterContentInit } from '@angular/core';
 import { MarkdownService } from 'angular2-markdown';
 import { Scrollor } from 'app/service/scrollor.service';
 
@@ -15,7 +15,7 @@ import {
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit {
+export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterContentInit {
     public selectTitle = '# Markdown content data \n\
 # Markdown content data \n\
 # Markdown content data \n\
@@ -36,7 +36,13 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
     public dynamic_height = true;
     public tab_position = 'bellow';
     public anchor_tip = { name: 'top' };
-    public element = document.querySelector('#ccc');
+    public element: any;
+    public tab1: any;
+    public tab_height_1: number;
+    public tab_height_2: number;
+    public tab2: any;
+    public tab_select = 0;
+    public show_scroll: boolean;
     @ViewChild('duInput') du_input;
     @ViewChild('duOutput') du_output;
 
@@ -46,39 +52,44 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
         private _scrollor: Scrollor
     ) { }
 
-    // this.selectTitle = this.title;
+    ngOnInit() {
+        this.element = document.querySelector('#ccc');
 
-    // onSelect(title: String): void {
-    //     selectTitle = this.title;
-    // }
-
+    }
     ngOnChanges(changes: any) {
-        console.log(changes);
-        const a = this._markdown.compile(this.selectTitle);
-        console.log(a);
-        // this._markdown.renderer.blockquote = (quote: string) => {
-        //     return `<blockquote class="king-quote">${quote}</blockquote>`;
-        // }
+        // console.log('changes', changes);
     }
 
     ngAfterViewInit() {
-
-        // setTimeout(() => {
-        //     console.log(this.du_input);
-        //     console.log(this.du_output);
-        //     console.log(this.du_input._viewContainerRef.offsetHeight);
-        //     console.log(this.du_output.nativeElement.offsetHeight);
-        // }, 0);
+        // console.log('view', this.element.scrollTop, this.element.scrollHeight);
     }
 
     ngAfterContentInit() {
+        // console.log('content', this.element.scrollTop, this.element.scrollHeight);
 
-        setTimeout(() => {
-            console.log(this.du_input);
-            console.log(this.du_output);
-        }, 0);
+    }
 
+    ngAfterViewChecked() {
+        // const tab1 = document.querySelector('#tab1');
+        // const tab2 = document.querySelector('#tab2');
+        // if (tab1) {
+        //     this.tab_height_1 = tab1.clientHeight;
+        // } else if (tab2) {
+        //     this.tab_height_2 = tab2.clientHeight;
+        // }
+        // console.log('viewcheck', this.element.scrollTop, this.element.scrollHeight, this.tab1.clientHeight);
+    }
 
+    ngAfterContentChecked() {
+        // const tab1 = document.querySelector('#tab1');
+        // const tab2 = document.querySelector('#tab2');
+        // if (tab1) {
+        //     this.tab_height_1 = tab1.clientHeight;
+        // } else if (tab2) {
+        //     this.tab_height_2 = tab2.clientHeight;
+        // }
+        // console.log(this.tab_height_1, this.tab_height_2);
+        // console.log('contentcheck', this.element.scrollTop, this.element.scrollHeight, this.tab2.clientHeight);
     }
 
     scroll_top() {
@@ -95,6 +106,26 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
         this.element = document.querySelector('#ccc');
         this._scrollor.figure_pos(this.element);
     }
+
+    figure_scroll_top() {
+        if (this.element.scrollTop > 100) {
+            this.show_scroll = true;
+            return true;
+        } else {
+            this.show_scroll = false;
+            return false;
+        }
+    }
+
+    select1() {
+        this.tab_select = 1;
+        this.tab_select = 0;
+    }
+
+    select2() {
+        this.tab_select = 0;
+        this.tab_select = 1;
+    }
     // update_title_on_key(event: any, title: String) {
     //     if (event.key === 'Enter') {
     //         this.selectTitle = title;
@@ -104,4 +135,8 @@ export class HomeComponent implements OnChanges, AfterViewInit, AfterContentInit
     // goBack(title: String): void {
     //     this.selectTitle = title;
     // }
+    select_change(event) {
+        // console.log(this.tab_height_1, this.tab_height_2);
+        this.tab_select = event;
+    }
 }
