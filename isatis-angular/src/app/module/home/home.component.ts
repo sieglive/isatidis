@@ -40,7 +40,6 @@ export class MarkdownDirective implements OnChanges {
         private _hljsservice: HighlightJsService
     ) { }
     ngOnChanges(changes: any) {
-        console.log(changes);
         const element_list = this.el.nativeElement.querySelectorAll('pre code');
         for (let i = 0; i < element_list.length; i++) {
             this._hljsservice.highlight(element_list[i]);
@@ -55,21 +54,20 @@ export class MarkdownDirective implements OnChanges {
 })
 export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterContentInit {
     public selectTitle = `
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data
-# Markdown content data`;
+# this is a title
+## this is also a title
+> this is a quote
+
+\`\`\` c
+// this is some code
+
+#include <stdio.h>
+
+int main() {
+    printf("hello world!");
+}
+\`\`\`
+`;
     public min_rows = 5;
     public max_rows = 20;
     public dynamic_height = true;

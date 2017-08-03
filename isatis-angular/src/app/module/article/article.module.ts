@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
-import { ProfileComponent } from 'app/comp/profile/profile.component';
+import { ArticleComponent } from './article.component';
 
 const Routes: Routes = [
-    { path: '', component: ProfileComponent },
+    { path: '', component: ArticleComponent },
 ]
 
 @NgModule({
@@ -18,6 +18,8 @@ const Routes: Routes = [
         FormsModule,
         RouterModule.forChild(Routes)
     ],
-    declarations: [ProfileComponent]
+    declarations: [
+        ArticleComponent
+    ]
 })
-export class ProfileModule { }
+export class ArticleModule { }

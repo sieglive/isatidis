@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
-import { EditorComponent } from 'app/comp/editor/editor.component';
+import { ProfileComponent } from './profile.component';
 
 const Routes: Routes = [
-    { path: '', component: EditorComponent },
+    { path: '', component: ProfileComponent },
 ]
 
 @NgModule({
@@ -18,8 +18,6 @@ const Routes: Routes = [
         FormsModule,
         RouterModule.forChild(Routes)
     ],
-    declarations: [
-        EditorComponent
-    ]
+    declarations: [ProfileComponent]
 })
-export class EditorModule { }
+export class ProfileModule { }

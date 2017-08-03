@@ -18,16 +18,12 @@ export class ProfileComponent implements OnChanges, DoCheck {
     ]
 
     ngOnChanges(change) {
-        console.log(change);
-        console.log(this.user_nick, this.user_account, this.user_name, this.user_email);
     }
 
 
     ngDoCheck() {
-        console.log(this.properties);
     }
 
     test() {
-        console.log('cancle');
     }
 }

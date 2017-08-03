@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
-import { ArticleComponent } from 'app/comp/article/article.component';
+import { EditorComponent } from './editor.component';
 
 const Routes: Routes = [
-    { path: '', component: ArticleComponent },
+    { path: '', component: EditorComponent },
 ]
 
 @NgModule({
@@ -19,7 +19,7 @@ const Routes: Routes = [
         RouterModule.forChild(Routes)
     ],
     declarations: [
-        ArticleComponent
+        EditorComponent
     ]
 })
-export class ArticleModule { }
+export class EditorModule { }

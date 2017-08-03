@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
-import { BulletinComponent } from 'app/comp/bulletin/bulletin.component';
+import { BulletinComponent } from './bulletin.component';
 
 const Routes: Routes = [
     { path: '', component: BulletinComponent },

@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.element = document.querySelector('#ccc');
-        console.log(this.element);
     }
 
     scroll_top() {

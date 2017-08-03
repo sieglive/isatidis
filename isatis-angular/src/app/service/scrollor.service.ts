@@ -18,7 +18,7 @@ export class Scrollor {
                 }, 5);
             }
         } else {
-            console.log(el);
+            console.log('element is empty.');
         }
     }
 
@@ -37,7 +37,7 @@ export class Scrollor {
                 }, 5);
             }
         } else {
-            console.log(el);
+            console.log('element is empty.');
         }
     }
 

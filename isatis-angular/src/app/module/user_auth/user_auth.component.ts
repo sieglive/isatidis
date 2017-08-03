@@ -43,7 +43,6 @@ export class UserAuthComponent {
                 user_name: this.user_account
             }
         );
-        console.log(this.user_nick);
         result.subscribe(res => { this.user_time = res.json().time; });
     }
 }

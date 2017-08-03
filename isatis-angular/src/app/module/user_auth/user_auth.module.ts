@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '@angular/material';
 
-import { UserAuthComponent } from 'app/comp/user_auth/user_auth.component';
+import { UserAuthComponent } from './user_auth.component';
 
 const Routes: Routes = [
     { path: '', component: UserAuthComponent },
