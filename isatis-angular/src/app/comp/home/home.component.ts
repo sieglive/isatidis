@@ -1,10 +1,14 @@
 import {
     Component,
+    Directive,
     ElementRef,
     Input,
+    Output,
+    EventEmitter,
     ViewChild,
     OnInit,
     OnChanges,
+    OnDestroy,
     AfterContentChecked,
     AfterViewChecked,
     AfterViewInit,
@@ -21,6 +25,28 @@ import {
     animate,
     transition
 } from '@angular/animations';
+
+@Directive({
+    selector: '[isatisMd]'
+})
+export class MarkdownDirective implements OnChanges {
+    @Input() set data(value: string) {
+    }
+
+    constructor(
+        private _markdown: MarkdownService,
+        public _scrollor: Scrollor,
+        private el: ElementRef,
+        private _hljsservice: HighlightJsService
+    ) { }
+    ngOnChanges(changes: any) {
+        console.log(changes);
+        const element_list = this.el.nativeElement.querySelectorAll('pre code');
+        for (let i = 0; i < element_list.length; i++) {
+            this._hljsservice.highlight(element_list[i]);
+        }
+    }
+}
 
 @Component({
     selector: 'isatis-home',
@@ -73,13 +99,12 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     ngOnChanges(changes: any) {
         // console.log('changes', changes);
     }
-
     ngAfterViewInit() {
-        this.element = this.el.nativeElement.querySelector('pre');
-        if (this.element) {
-            console.log(this.element);
-            this._hljsservice.highlight(this.element);
-        }
+        // this.element = this.el.nativeElement.querySelector('pre');
+        // if (this.element) {
+        //     console.log(this.element);
+        //     this._hljsservice.highlight(this.element);
+        // }
 
 
         // console.log('view', this.element.scrollTop, this.element.scrollHeight);
@@ -114,17 +139,14 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     }
 
     scroll_top() {
-        this.element = document.querySelector('#ccc');
         this._scrollor.scroll_top(this.element);
     }
 
     scroll_bottom() {
-        this.element = document.querySelector('#ccc');
         this._scrollor.scroll_bottom(this.element);
     }
 
     figure_pos() {
-        this.element = document.querySelector('#ccc');
         this._scrollor.figure_pos(this.element);
     }
 
@@ -157,9 +179,9 @@ export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, Af
     select_change(event) {
         // console.log(this.tab_height_1, this.tab_height_2);
         this.tab_select = event;
-        const element_list = this.el.nativeElement.querySelectorAll('pre code');
-        for (let i = 0; i < element_list.length; i++) {
-            this._hljsservice.highlight(element_list[i]);
-        }
+        // const element_list = this.el.nativeElement.querySelectorAll('pre code');
+        // for (let i = 0; i < element_list.length; i++) {
+        //     this._hljsservice.highlight(element_list[i]);
+        // }
     }
 }

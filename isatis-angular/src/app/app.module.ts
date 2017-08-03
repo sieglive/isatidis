@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
-import { HomeComponent } from 'app/comp/home/home.component'
+import { HomeComponent, MarkdownDirective } from 'app/comp/home/home.component'
 import { ArticleComponent } from 'app/comp/article/article.component';
 import { ProfileComponent } from 'app/comp/profile/profile.component';
 import { AboutComponent } from 'app/comp/about/about.component';
@@ -45,7 +45,8 @@ const appRoutes: Routes = [
         BulletinComponent,
         UserAuthComponent,
         EditorComponent,
-        ConvertFormat
+        ConvertFormat,
+        MarkdownDirective
     ],
     imports: [
         FormsModule,
