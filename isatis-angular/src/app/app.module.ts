@@ -5,13 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
-import { HomeComponent, MarkdownDirective } from 'app/comp/home/home.component'
-import { ArticleComponent } from 'app/comp/article/article.component';
-import { ProfileComponent } from 'app/comp/profile/profile.component';
-import { AboutComponent } from 'app/comp/about/about.component';
-import { BulletinComponent } from 'app/comp/bulletin/bulletin.component';
-import { UserAuthComponent } from 'app/comp/user/user_auth.component';
-import { EditorComponent } from 'app/comp/editor/editor.component';
+
 import { MaterialModule } from '@angular/material';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
@@ -25,28 +19,20 @@ import { Scrollor } from 'app/service/scrollor.service';
 // import { BackgroundService } from 'app/background.service';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: 'bulletin', pathMatch: 'full' },
-    { path: 'auth', component: UserAuthComponent },
-    { path: 'bulletin', component: BulletinComponent },
-    { path: 'home', component: HomeComponent, pathMatch: 'full' },
-    { path: 'article', component: ArticleComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'editor', component: EditorComponent }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'auth', loadChildren: 'app/comp/user_auth/user_auth.module#UserAuthModule' },
+    { path: 'bulletin', loadChildren: 'app/comp/bulletin/bulletin.module#BulletinModule' },
+    { path: 'home', loadChildren: 'app/comp/home/home.module#HomeModule' },
+    { path: 'article', loadChildren: 'app/comp/article/article.module#ArticleModule' },
+    { path: 'profile', loadChildren: 'app/comp/profile/profile.module#ProfileModule' },
+    { path: 'about', loadChildren: 'app/comp/about/about.module#AboutModule' },
+    { path: 'editor', loadChildren: 'app/comp/editor/editor.module#EditorModule' }
 ];
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        ArticleComponent,
-        ProfileComponent,
-        AboutComponent,
-        BulletinComponent,
-        UserAuthComponent,
-        EditorComponent,
-        ConvertFormat,
-        MarkdownDirective
+        ConvertFormat
     ],
     imports: [
         FormsModule,
@@ -57,8 +43,6 @@ const appRoutes: Routes = [
         JsonpModule,
         HighlightJsModule,
         MarkdownModule.forRoot(),
-        FroalaEditorModule.forRoot(),
-        FroalaViewModule.forRoot(),
         RouterModule.forRoot(appRoutes)
     ],
     providers: [WindowRef, IsatisHttp, Scrollor, HighlightJsService],

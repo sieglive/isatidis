@@ -54,21 +54,22 @@ export class MarkdownDirective implements OnChanges {
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnChanges, AfterContentChecked, AfterViewChecked, AfterViewInit, AfterContentInit {
-    public selectTitle = '# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data \n\
-# Markdown content data';
+    public selectTitle = `
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data
+# Markdown content data`;
     public min_rows = 5;
     public max_rows = 20;
     public dynamic_height = true;

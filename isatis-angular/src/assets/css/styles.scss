@@ -46,12 +46,6 @@ md-card.mat-card {
     z-index: 2;
 }
 
-.top-white {
-    padding-top: 64px;
-    box-sizing: border-box;
-    height: 100%;
-}
-
 .page-container {
     padding-top: 30px;
 }
@@ -69,7 +63,12 @@ button.mat-fab {
     }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 600px) {
+    .top-white {
+        padding-top: 64px;
+        box-sizing: border-box;
+        height: 100%;
+    }
     content.isatis-nav-container {
         display: flex;
         width: 100%;
@@ -92,7 +91,12 @@ button.mat-fab {
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
+    .top-white {
+        padding-top: 56px;
+        box-sizing: border-box;
+        height: 100%;
+    }
     content.isatis-nav-container {
         display: flex;
         width: 100%;
@@ -110,14 +114,7 @@ button.mat-fab {
         box-sizing: border-box;
         background: rgba(0, 0, 0, 0);
     }
-}
-
-markdown {
-    max-width: 100%;
-    p {
-        max-width: 100%;
-        img {
-            width: 100%;
-        }
+    md-toolbar.mat-toolbar {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
     }
 }
