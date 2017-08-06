@@ -15,14 +15,14 @@
     </svg>
         <span class="brand">S<i>tar</i>-T</span>
         </button>
-        <button md-button routerLink="about"><md-icon>info</md-icon> ABOUT</button>
+        <button md-button routerLink="/about"><md-icon>info</md-icon> ABOUT</button>
         <span class="isatis-spacer"></span>
         <button md-button [mdMenuTriggerFor]="menu"> MENU</button>
         <md-menu #menu="mdMenu">
-            <button md-menu-item routerLink="profile"><md-icon>account_balance</md-icon> PROFILE</button>
-            <button md-menu-item routerLink="bulletin"><md-icon>fingerprint</md-icon> BULLETIN</button>
-            <button md-menu-item routerLink="auth"><md-icon>flight_land</md-icon> LOG IN</button>
-            <button md-menu-item routerLink="profile"><md-icon>flight_takeoff</md-icon> LOG OUT</button>
+            <button md-menu-item routerLink="/profile"><md-icon>account_balance</md-icon> PROFILE</button>
+            <button md-menu-item routerLink="/bulletin"><md-icon>fingerprint</md-icon> BULLETIN</button>
+            <button md-menu-item routerLink="/auth"><md-icon>flight_land</md-icon> LOG IN</button>
+            <button md-menu-item routerLink="/profile"><md-icon>flight_takeoff</md-icon> LOG OUT</button>
         </md-menu>
     </content>
 </md-toolbar>

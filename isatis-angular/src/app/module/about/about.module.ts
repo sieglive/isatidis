@@ -6,9 +6,20 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { AboutComponent } from './about.component';
+import { SubaboutComponent } from './comp/subabout/subabout.component';
+import { NoaboutComponent } from './comp/noabout/noabout.component';
 
+import { AuthGuard, ExAuthGuard } from 'app/service/guard.service';
 const aboutRoutes: Routes = [
-    { path: '', component: AboutComponent },
+    {
+        path: '',
+        component: AboutComponent,
+        canActivate: [ExAuthGuard],
+        children: [
+            { path: 'avatar', component: SubaboutComponent, canActivate: [ExAuthGuard] },
+            { path: 'error', component: NoaboutComponent, canActivate: [AuthGuard] },
+        ]
+    }
 ]
 
 @NgModule({
@@ -16,10 +27,12 @@ const aboutRoutes: Routes = [
         CommonModule,
         MaterialModule,
         FormsModule,
-        RouterModule.forChild(aboutRoutes)
+        RouterModule.forChild(aboutRoutes),
     ],
     declarations: [
-        AboutComponent
+        AboutComponent,
+        SubaboutComponent,
+        NoaboutComponent
     ]
 })
 export class AboutModule { }

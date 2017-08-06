@@ -16,6 +16,8 @@ import { WindowRef } from 'app/service/window.service';
 import { IsatisHttp } from 'app/service/isatis_http.service';
 import { Scrollor } from 'app/service/scrollor.service';
 // import { BackgroundService } from 'app/background.service';
+import { AuthGuard, ExAuthGuard } from 'app/service/guard.service';
+import { AuthService } from 'app/service/auth.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,8 +26,8 @@ const appRoutes: Routes = [
     { path: 'home', loadChildren: 'app/module/home/home.module#HomeModule' },
     { path: 'article', loadChildren: 'app/module/article/article.module#ArticleModule' },
     { path: 'profile', loadChildren: 'app/module/profile/profile.module#ProfileModule' },
-    { path: 'about', loadChildren: 'app/module/about/about.module#AboutModule' },
-    { path: 'editor', loadChildren: 'app/module/editor/editor.module#EditorModule' }
+    { path: 'editor', loadChildren: 'app/module/editor/editor.module#EditorModule' },
+    { path: 'about', loadChildren: 'app/module/about/about.module#AboutModule', canLoad: [ExAuthGuard] },
 ];
 
 @NgModule({
@@ -43,7 +45,14 @@ const appRoutes: Routes = [
         HighlightJsModule,
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [WindowRef, IsatisHttp, Scrollor, HighlightJsService],
+    providers: [
+        WindowRef,
+        IsatisHttp,
+        Scrollor,
+        HighlightJsService,
+        AuthGuard,
+        ExAuthGuard,
+        AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
