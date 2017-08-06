@@ -42,5 +42,5 @@ testem.log
 Thumbs.db
 isatis-angular/dist/
 isatis-angular/dist.tar
-__pycache__/
+*__pycache__/*
 *.pyc

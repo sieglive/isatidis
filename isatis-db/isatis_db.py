@@ -4,7 +4,7 @@
 from tornado import web, gen, httpserver, ioloop
 from tornado.options import options
 
-from views.base import BaseHandler
+from views import BaseHandler, account_url
 
 
 class IndexHandler(BaseHandler):
@@ -22,14 +22,17 @@ def isatis():
         (r'/', IndexHandler),
         (r'/back/?', IndexHandler),
     ]
+    handlers.extend(account_url)
+
     tornado_app = web.Application(
         handlers=handlers,
         template_path='templates',
     )
+
     tornado_server = httpserver.HTTPServer(
         tornado_app,
     )
-    tornado_server.listen(7717)
+    tornado_server.listen(options.port)
     ioloop.IOLoop.instance().start()
 
 

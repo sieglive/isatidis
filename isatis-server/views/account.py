@@ -22,10 +22,11 @@ class SignIn(BaseHandler):
 
 class SignUp(BaseHandler):
     """Handle LogOn Request."""
+
     @asynchronous
     @coroutine
     def post(self, *_args, **_kwargs):
-        args = self.parse_json_args(['email', 'password'])
+        args = self.parse_json_arguments(['email', 'password'])
         args.add('msg', 'params accessed.')
         self.finish(json.dumps(args.to_dict()))
 
