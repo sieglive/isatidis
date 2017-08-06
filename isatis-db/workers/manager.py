@@ -31,6 +31,9 @@ APP.conf.update(
     task_default_exchange_type='topic',
     task_default_routing_key='task.default',
     task_routes={
+        'workers.task_database.*': {
+            'queue': env + '_database'
+        },
         'workers.task_email.*': {
             'queue': env + '_email'
         },
@@ -59,7 +62,7 @@ def exc_handler(function):
         except:
             print('my exception\n\n')
             traceback.print_exc()
-            print('=' * 80, '/n/n')
+            print('=' * 80, '\n\n')
             res = dict(
                 result=0, status=255, msg='Unknown Error.'
             )

@@ -22,8 +22,7 @@ def query_account_by_user_id(user_id, **kwargs):
 
 @app.task
 @exc_handler
-def insert_account(user_id,
-                   user_name,
+def insert_account(user_name,
                    nick_name,
                    user_pass,
                    email,
@@ -38,18 +37,17 @@ def insert_account(user_id,
     """Insert an account."""
     sess = kwargs.get('sess')
     new_account = Account(
-        user_id,
-        user_name,
-        nick_name,
-        user_pass,
-        email,
-        permission,
-        avatar_path,
-        active_status,
-        valid,
-        appear_time,
-        register_time,
-        expire_time,
+        user_name=user_name,
+        nick_name=nick_name,
+        user_pass=user_pass,
+        email=email,
+        permission=permission,
+        avatar_path=avatar_path,
+        active_status=active_status,
+        valid=valid,
+        appear_time=appear_time,
+        register_time=register_time,
+        expire_time=expire_time,
     )
     sess.add(new_account)
     sess.commit()
