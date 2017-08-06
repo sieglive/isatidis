@@ -1,0 +1,44 @@
+.long-input {
+    width: 95%;
+}
+
+.property-title {
+    text-align: justify;
+    width: 150px;
+}
+
+.avatar {
+    margin-top: 25px;
+    padding: 0px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.con-left {
+    flex: 1;
+    flex-grow: 2;
+}
+
+.con-right {
+    width: 300px;
+    text-align: center;
+}
+
+.footer {
+    text-align: left;
+    button {
+        margin-left: 20px;
+        width: 150px;
+        height: 50px;
+    }
+}

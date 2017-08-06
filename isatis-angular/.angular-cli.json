@@ -18,11 +18,16 @@
         "testTsconfig": "tsconfig.spec.json",
         "prefix": "isatis",
         "styles": [
-            "styles.scss",
-            "md.scss"
+            "assets/css/styles.scss",
+            "assets/css/md.scss",
+            "assets/css/markdown.scss",
+            "assets/css/monokai_sublime.min.scss",
+            "../node_modules/font-awesome/css/font-awesome.css"
         ],
         "scripts": [
-            "assets/particles.min.js"
+            "../node_modules/jquery/dist/jquery.min.js",
+            "../node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+            "assets/js/highlight.min.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {

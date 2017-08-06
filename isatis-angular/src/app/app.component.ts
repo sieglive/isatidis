@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { WindowRef } from 'app/service/window.service';
-// import { BackgroundService } from 'app/background.service';
+import { Component, OnInit, Directive, ViewChild } from '@angular/core';
+
+import { Scrollor } from 'app/service/scrollor.service';
+
+
 @Component({
     selector: 'isatis-root',
     templateUrl: './app.component.html',
@@ -8,34 +10,48 @@ import { WindowRef } from 'app/service/window.service';
 })
 
 export class AppComponent implements OnInit {
+
     private disabled_background = false;
-    private toggle = false;
-    constructor(private winRef: WindowRef) { }
+    public element: any
+
+    constructor(public _scrollor: Scrollor) {
+    }
 
     ngOnInit() {
-        if (this.toggle) {
-            this.winRef.nativeWindow.particlesJS.load('particles-js', 'assets/particles.json', function () {
-                console.log('callback - particles.js config loaded');
-            });
-        }
+        this.element = document.querySelector('#ccc');
     }
 
-    change_bg() {
-        if (this.toggle) {
-            this.winRef.nativeWindow.pJSDom = [];
-            this.winRef.nativeWindow.particlesJS.load('particles-js', 'assets/particles.json', function () {
-                console.log('callback - particles.js config loaded');
-            });
-        } else {
-            this.winRef.nativeWindow.pJSDom[0].pJS.interactivity.events.onclick.enable = false;
-            this.winRef.nativeWindow.pJSDom[0].pJS.interactivity.events.onhover.enable = false;
-            this.winRef.nativeWindow.pJSDom[0].pJS.particles.array = [];
-            this.winRef.nativeWindow.pJSDom[0].pJS.particles.move.enable = false;
-        }
+    scroll_top() {
+        this._scrollor.scroll_top(this.element);
     }
 
-    clean_bg() {
-        this.winRef.nativeWindow.pJSDom[0].pJS.particles.array = [];
+    scroll_bottom() {
+        this._scrollor.scroll_bottom(this.element);
     }
+
+    figure_pos() {
+        this._scrollor.figure_pos(this.element);
+    }
+
+    figure_scroll_top() {
+        this._scrollor.figure_scroll_top(this.element);
+    }
+    // change_bg() {
+    //     if (this.toggle) {
+    //         this.winRef.nativeWindow.pJSDom = [];
+    //         this.winRef.nativeWindow.particlesJS.load('particles-js', 'assets/particles.json', function () {
+    //             console.log('callback - particles.js config loaded');
+    //         });
+    //     } else {
+    //         this.winRef.nativeWindow.pJSDom[0].pJS.interactivity.events.onclick.enable = false;
+    //         this.winRef.nativeWindow.pJSDom[0].pJS.interactivity.events.onhover.enable = false;
+    //         this.winRef.nativeWindow.pJSDom[0].pJS.particles.array = [];
+    //         this.winRef.nativeWindow.pJSDom[0].pJS.particles.move.enable = false;
+    //     }
+    // }
+
+    // clean_bg() {
+    //     this.winRef.nativeWindow.pJSDom[0].pJS.particles.array = [];
+    // }
 
 }

@@ -44,3 +44,5 @@ isatis-angular/dist/
 isatis-angular/dist.tar
 *__pycache__/*
 *.pyc
+
+aot.tar

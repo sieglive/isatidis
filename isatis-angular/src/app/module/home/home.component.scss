@@ -1,0 +1,39 @@
+@import '~@angular/material/theming';
+$config: mat-typography-config();
+@include mat-core();
+$mycolor: map-get($mat-orange, 800);
+.isatis-home {
+    padding-top: 30px;
+}
+
+.name {
+    color: $mycolor;
+    font-size: 2em;
+}
+
+.myinput {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    font-size: 1.5em;
+}
+
+.mat-input-container {
+    width: 100%;
+    .mat-input-infix {
+        background: rgba(0, 0, 0, .26);
+    }
+}
+
+.markdown-editor {
+    right: 180px;
+    bottom: 40px;
+}
+
+.markdown-showup {
+    right: 110px;
+    bottom: 40px;
+}
+
+#tab2 {
+    height: 100%;
+}

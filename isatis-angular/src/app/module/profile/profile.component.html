@@ -1,0 +1,35 @@
+<div class="page-container" id="top">
+    <md-card>
+
+        <div class="container">
+            <div class="con-left">
+                <div class="title">
+                    Profile of Plank Root
+                </div>
+                <div>
+                    <span *ngFor="let property of properties">
+                    <p class="long-input">
+                        <md-input-container class="long-input">
+                            <md-placeholder>
+                                {{property.name}}
+                                <md-icon>mode_edit</md-icon>
+                            </md-placeholder>
+                            <input mdInput [(ngModel)]="property.value" type="text" />
+                        </md-input-container>
+                    </p>
+                </span>
+                </div>
+            </div>
+            <div class="con-right">
+
+                <button md-raised-button class="avatar">
+                <img md-card-image src="assets/avatar2.jpg" />
+                </button>
+            </div>
+        </div>
+        <div class="footer">
+            <button md-raised-button color="primary" type="submit" (click)="ngOnChanges('')">Submit</button>
+            <button md-raised-button type="submit" (click)="test()">Cancel</button>
+        </div>
+    </md-card>
+</div>
