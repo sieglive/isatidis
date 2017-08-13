@@ -6,8 +6,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
 
+import { MdSnackBar } from '@angular/material';
+
 import { MaterialModule } from '@angular/material';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
@@ -40,8 +42,7 @@ const appRoutes: Routes = [
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
-        HttpModule,
-        JsonpModule,
+        HttpClientModule,
         HighlightJsModule,
         RouterModule.forRoot(appRoutes)
     ],
@@ -52,7 +53,9 @@ const appRoutes: Routes = [
         HighlightJsService,
         AuthGuard,
         ExAuthGuard,
-        AuthService],
+        AuthService,
+        MdSnackBar
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

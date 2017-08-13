@@ -1,2 +1,5 @@
 server_name: 'isatidis.com'
 
+server:
+    expire_time: 3600
+mongodb: 'mongodb://mymongo:123456@10.11.1.8:27017/admin'

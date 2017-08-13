@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from '@angular/material';
 
@@ -16,6 +17,7 @@ const Routes: Routes = [
         CommonModule,
         MaterialModule,
         FormsModule,
+        HttpClientModule,
         RouterModule.forChild(Routes)
     ],
     declarations: [UserAuthComponent]

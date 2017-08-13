@@ -17,6 +17,7 @@ STATUS_DICT = dict([
     (3001, 'Username or password is invalid'),
     (3002, 'Account is inactivated.'),
     (3003, 'Email not Register'),
+    (3004, 'Email exists.'),
     (3005, 'User\'s session key not exists, need to login.'),
     (3006, 'User\'s session value not exists, need to login'),
     (3007, 'Other people login this account, session is invalid.'),
@@ -111,6 +112,8 @@ class ParseJSONError(HTTPError):
 
 class BaseHandler(RequestHandler):
     """Custom handler for other views module."""
+    user_account = m_client.user_account
+    user_info = m_client.user_info
     session = m_client.session
     # Set the public head here.
     # pub_head = dict(

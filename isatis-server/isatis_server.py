@@ -26,6 +26,7 @@ def isatis():
 
     tornado_app = web.Application(
         handlers=handlers,
+        cookie_secret='7tfGZoAyEeewaxyHLFbvyu7XxmeAMhHnrXQchyxW78o=',
         template_path='templates',
     )
     tornado_server = httpserver.HTTPServer(
