@@ -10,11 +10,16 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./user_auth.component.scss']
 })
 export class UserAuthComponent {
-    public user_data = {
+    public sign_up_data = {
         email: '',
         password: '',
         confirm_pass: '',
         nickname: ''
+    }
+
+    public sign_in_data = {
+        email: '',
+        password: '',
     }
 
     public form_data = {
@@ -58,13 +63,13 @@ export class UserAuthComponent {
     }
 
     signIn() {
-        this.user_data.email = this.user_data.email.trim();
+        this.sign_in_data.email = this.sign_in_data.email.trim();
         let message = '';
         let not_regular = false;
-        if (!this.user_data.email.match(this.pattern.email)) {
+        if (!this.sign_in_data.email.match(this.pattern.email)) {
             message = 'Invalid Email.';
             not_regular = true;
-        } else if (!this.user_data.password.match(this.pattern.password)) {
+        } else if (!this.sign_in_data.password.match(this.pattern.password)) {
             message = 'Invalid Password.';
             not_regular = true;
         }
@@ -77,8 +82,8 @@ export class UserAuthComponent {
         const result = this._http.post(
             '/middle/account/signin',
             {
-                email: this.user_data.email,
-                password: this.user_data.password
+                email: this.sign_in_data.email,
+                password: this.sign_in_data.password
             });
         result.subscribe(
             data => {
@@ -96,19 +101,19 @@ export class UserAuthComponent {
 
 
     signUp() {
-        this.user_data.email = this.user_data.email.trim();
+        this.sign_up_data.email = this.sign_up_data.email.trim();
         let message = '';
         let not_regular = false;
-        if (!this.user_data.nickname.match(this.pattern.nickname)) {
+        if (!this.sign_up_data.nickname.match(this.pattern.nickname)) {
             message = 'Invalid Nickname.';
             not_regular = true;
-        } else if (!this.user_data.email.match(this.pattern.email)) {
+        } else if (!this.sign_up_data.email.match(this.pattern.email)) {
             message = 'Invalid Email.';
             not_regular = true;
-        } else if (!this.user_data.password.match(this.pattern.password)) {
+        } else if (!this.sign_up_data.password.match(this.pattern.password)) {
             message = 'Invalid Password.';
             not_regular = true;
-        } else if (this.user_data.password !== this.user_data.confirm_pass) {
+        } else if (this.sign_up_data.password !== this.sign_up_data.confirm_pass) {
             message = 'Password is inconsistent';
             not_regular = true;
         }
@@ -129,10 +134,13 @@ export class UserAuthComponent {
         const result = this._http.post(
             '/middle/account/signup',
             {
-                nickname: this.user_data.nickname,
-                email: this.user_data.email,
-                password: this.user_data.password
+                nickname: this.sign_up_data.nickname,
+                email: this.sign_up_data.email,
+                password: this.sign_up_data.password
             });
-        result.subscribe(data => { console.log(data) });
+        result.subscribe(
+            data => { console.log('success', data); },
+            err => { console.log('error', err); }
+        );
     }
 }
