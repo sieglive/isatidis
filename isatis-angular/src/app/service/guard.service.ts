@@ -23,7 +23,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
             fragment: 'anchor'
         };
 
-        console.log(route, state);
         this.router.navigate(['/auth'], navigationExtras);
         return false;
     }
@@ -38,7 +37,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
         // const url = `/${route.path}`;
 
         // return this.checkLogin(url);
-        console.log(route);
         return false;
     }
 

@@ -8,8 +8,8 @@
                             Enter Your Email
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.email" />
-                        <!-- <input mdInput [mdTooltip]="form_data.email_tooltip" [mdTooltipPosition]="position" [(ngModel)]="user_data.email" /> -->
+                        <input mdInput [(ngModel)]="sign_in_data.email" />
+                        <!-- <input mdInput [mdTooltip]="form_data.email_tooltip" [mdTooltipPosition]="position" [(ngModel)]="sign_in_data.email" /> -->
                     </md-input-container>
                     <br/>
                     <md-input-container class="long-input ">
@@ -17,7 +17,7 @@
                             Enter Your Password
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.password" type="password" />
+                        <input mdInput [(ngModel)]="sign_in_data.password" type="password" />
                         <!-- <input mdInput [mdTooltip]="form_data.pass_tooltip" [mdTooltipPosition]="position" [(ngModel)]="user_data.password" type="password" /> -->
                     </md-input-container>
                 </p>
@@ -33,7 +33,7 @@
                             Enter Your Name
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.nickname" [mdTooltip]="form_data.nick_tooltip" [mdTooltipPosition]="position" />
+                        <input mdInput [(ngModel)]="sign_up_data.nickname" [mdTooltip]="form_data.nick_tooltip" [mdTooltipPosition]="position" />
                     </md-input-container>
                     <br/>
                     <md-input-container class="long-input">
@@ -41,7 +41,7 @@
                             Enter Your Email
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.email" [mdTooltip]="form_data.email_tooltip" [mdTooltipPosition]="position" />
+                        <input mdInput [(ngModel)]="sign_up_data.email" [mdTooltip]="form_data.email_tooltip" [mdTooltipPosition]="position" />
                     </md-input-container>
                     <br/>
                     <md-input-container class="long-input">
@@ -49,7 +49,7 @@
                             Enter Your Password
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.password" [mdTooltip]="form_data.pass_tooltip" [mdTooltipPosition]="position" type="password" />
+                        <input mdInput [(ngModel)]="sign_up_data.password" [mdTooltip]="form_data.pass_tooltip" [mdTooltipPosition]="position" type="password" />
                     </md-input-container>
                     <br/>
                     <md-input-container class="long-input">
@@ -57,7 +57,7 @@
                             Confirm Your Password
                             <md-icon>mode_edit</md-icon>
                         </md-placeholder>
-                        <input mdInput [(ngModel)]="user_data.confirm_pass" [mdTooltip]="form_data.confirm_tooltip" [mdTooltipPosition]="position" type="password" />
+                        <input mdInput [(ngModel)]="sign_up_data.confirm_pass" [mdTooltip]="form_data.confirm_tooltip" [mdTooltipPosition]="position" type="password" />
                     </md-input-container>
                 </p>
                 <button md-raised-button (click)="signUp()">Submit</button>
