@@ -6,6 +6,8 @@ from tornado.options import options
 
 from views import BaseHandler, account_url
 
+from config import CFG as config
+
 
 class IndexHandler(BaseHandler):
     """Index Page."""
@@ -32,7 +34,7 @@ def isatis():
     tornado_server = httpserver.HTTPServer(
         tornado_app,
     )
-    tornado_server.listen(7717)
+    tornado_server.listen(config.server.port)
     print('start listen...')
     ioloop.IOLoop.instance().start()
 
